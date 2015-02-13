@@ -3,14 +3,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     less: {
-      development: {
+      dev: {
         options: {
           paths: ["css"],
           cleancss: true
         },
         files: {"css/style.css": "less/style.less"}
       },
-      production: {
+      dist: {
         options: {
           paths: ["css"],
           cleancss: true
@@ -20,28 +20,43 @@ module.exports = function(grunt) {
     },
 
     jade: {
-      compile: {
-        options: {
-          pretty: true,
-          data: {
-            debug: false
-          }
-        },
-        files: {"index.html": "jade/*.jade"}
-      }
+
+      dev: {
+        compile: {
+          options: {
+            pretty: true,
+            data: {
+              debug: false
+            }
+          },
+          files: {"index.html": "jade/*.jade"}
+        }
+      },
+      dist: {
+        compile: {
+          options: {
+            pretty: true,
+            data: {
+              debug: false
+            }
+          },
+          files: {"index.html": "jade/*.jade"}
+        }
+      },
+
     },
 
     watch: {
       jade: {
         files: ["./jade/*"],
-        tasks: ["jade"],
+        tasks: ["jade:dev"],
         options: {
           livereload: true
         },
       },
       less: {
         files: ["less/*"],
-        tasks: ["less:development"],
+        tasks: ["less:dev"],
         options: {
           livereload: true
         },
@@ -71,5 +86,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.registerTask('default', ['connect:server', 'watch']);
+  grunt.registerTask('dist', ['less:dist', 'jade:dist']);
 
 };

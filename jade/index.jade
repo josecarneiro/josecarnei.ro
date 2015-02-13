@@ -8,3 +8,35 @@ html(lang="en")
     link(rel="stylesheet", href="css/style.css")
   body
     h1 Under Construction.
+    .container
+      form
+        label
+          span.sr-only First Name
+          input(type="text", placeholder="First Name")
+        label
+          span.sr-only Last Name
+          input(type="text", placeholder="Last Name")
+        label
+          span.sr-only Email
+          input(type="email", placeholder="Email")
+        label
+          span.sr-only Password
+          input(type="password", placeholder="Name")
+        label
+          span Remember Me
+          input(type="checkbox")
+          span.checkbox
+        input(type="submit", value="Submit")
+      ul
+        li
+          a.btn(href="#")
+            span Connect
+        li
+          a.btn.yellow(href="#")
+            span Request Sent
+        li
+          a.btn.green(href="#")
+            span Connected
+        li
+          a.btn.red(href="#")
+            span Disconnect
