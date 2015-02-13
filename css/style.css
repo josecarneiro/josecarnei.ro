@@ -1,0 +1,18 @@
+/* RESET */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+/* GENERAL */
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h1 {
+  width: 16em;
+  margin: 6em auto;
+  text-align: center;
+}
