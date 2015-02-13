@@ -22,7 +22,6 @@ module.exports = function(grunt) {
     jade: {
 
       dev: {
-        compile: {
           options: {
             pretty: true,
             data: {
@@ -30,7 +29,6 @@ module.exports = function(grunt) {
             }
           },
           files: {"index.html": "jade/*.jade"}
-        }
       },
       dist: {
         compile: {
