@@ -1,60 +1,60 @@
+var ftpHost = 'ftp.onstatic-pt.setupdns.net';
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
-
-    less: {
-      dev: {
-        options: {
-          paths: ["css"],
-          cleancss: true
-        },
-        files: {"css/style.css": "less/style.less"}
-      },
-      dist: {
-        options: {
-          paths: ["css"],
-          cleancss: true
-        },
-        files: {"css/style.css": "less/style.less"}
+    concurrent: {
+      dev: ['less:dev', 'jade:dev', 'watch', 'connect:server'],
+      options: {
+        logConcurrentOutput: true
       }
     },
-
-    jade: {
-
+    connect: {
+      server: {
+        options: {
+          base: './dist/',
+          open: true,
+          livereload: true,
+          keepalive: true
+        }
+      }
+    },
+    less: {
       dev: {
-          options: {
-            pretty: true,
-            data: {
-              debug: false
-            }
-          },
-          files: {"index.html": "jade/*.jade"}
+        files: {'./src/css/style.css': './src/less/style.less'}
       },
       dist: {
-        compile: {
-          options: {
-            pretty: true,
-            data: {
-              debug: false
-            }
-          },
-          files: {"index.html": "jade/*.jade"}
-        }
-      },
-
+        options: {
+          compress: true
+        },
+        files: {'./src/css/style.css': './src/less/style.less'}
+      }
     },
-
+    jade: {
+      dev: {
+        options: {
+          pretty: true
+        },
+        files: {'./dist/index.html': './src/jade/*'}
+      },
+      dist: {
+        options: {
+          pretty: false
+        },
+        files: {'./dist/index.html': './src/jade/*'}
+      },
+    },
     watch: {
-      jade: {
-        files: ["./jade/*"],
-        tasks: ["jade:dev"],
+      less: {
+        files: ['./src/less/*'],
+        tasks: ['less:dev', 'jade:dev'],
         options: {
           livereload: true
         },
       },
-      less: {
-        files: ["less/*"],
-        tasks: ["less:dev"],
+      jade: {
+        files: ['./src/jade/*'],
+        tasks: ['jade:dev'],
         options: {
           livereload: true
         },
@@ -66,24 +66,27 @@ module.exports = function(grunt) {
         }
       }
     },
-
-    connect: {
-      server: {
-        options: {
-          open: true,
-          hostname: "localhost",
-          livereload: true
-        }
+    // DEPLOY TO FTP SERVER
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'ftp.onstatic-pt.setupdns.net',
+          port: 21
+        },
+        src: './dist/',
+        dest: './public/www/',
+        exclusions: ['./dist/css']
       }
     }
-
   });
 
+  grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.registerTask('default', ['connect:server', 'watch']);
+  grunt.loadNpmTasks('grunt-ftp-deploy');
+  grunt.registerTask('default', 'concurrent');
   grunt.registerTask('dist', ['less:dist', 'jade:dist']);
-
+  grunt.registerTask('deploy', 'ftp-deploy');
 };
