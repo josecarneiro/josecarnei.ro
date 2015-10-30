@@ -88,5 +88,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ftp-deploy');
   grunt.registerTask('default', 'concurrent');
   grunt.registerTask('dist', ['less:dist', 'jade:dist']);
-  grunt.registerTask('deploy', 'ftp-deploy');
+  grunt.registerTask('deploy', ['less:dist', 'jade:dist', 'ftp-deploy']);
 };
