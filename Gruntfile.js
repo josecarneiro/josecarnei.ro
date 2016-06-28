@@ -1,4 +1,4 @@
-var ftpHost = 'ftp.onstatic-pt.setupdns.net';
+var config = require('./config');
 
 module.exports = function(grunt) {
 
@@ -70,8 +70,8 @@ module.exports = function(grunt) {
     'ftp-deploy': {
       build: {
         auth: {
-          host: 'ftp.onstatic-pt.setupdns.net',
-          port: 21
+          host: config.ftp.host,
+          port: config.ftp.port
         },
         src: './dist/',
         dest: './public/www/',
@@ -85,6 +85,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-ftp-deploy');
   grunt.registerTask('default', 'concurrent');
   grunt.registerTask('dist', ['less:dist', 'jade:dist']);
