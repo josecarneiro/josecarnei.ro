@@ -78,5 +78,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.registerTask('default', 'concurrent');
-  grunt.registerTask('dist', ['less:dist', 'copy:dev']);
+  grunt.registerTask('dist', ['less:dist', 'uglify:dev', 'copy:dev']);
 };
