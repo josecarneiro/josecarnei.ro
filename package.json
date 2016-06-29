@@ -1,29 +1,41 @@
 {
   "name": "light",
   "description": "José Carneiro's personal website",
-  "version": "0.2.1",
-  "homepage": "http://light.pt",
   "author": "José Maria Carneiro",
+  "homepage": "http://light.pt",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/josecarneiro/light.git"
   },
+  "private": false,
   "scripts": {
-    "dev": "grunt",
-    "deploy": "grunt deploy",
-    "postinstall": "grunt dist"
+    "start": "node ./bin/www"
   },
   "engines": {
     "node": ">=0.10.1"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "compression": "^1.6.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-concurrent": "^2.3.0",
     "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-jade": "^1.0.0",
     "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-ftp-deploy": "^0.1.10",
+    "grunt-nodemon": "^0.4.2",
     "open": "0.0.5"
   }
 }

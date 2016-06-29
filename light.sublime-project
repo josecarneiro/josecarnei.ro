@@ -4,14 +4,11 @@
 		{
       "file_exclude_patterns":
       [
-        "LICENSE",
-        // "README.md",
-        "example.config.js"
+        "README.md"
       ],
       "folder_exclude_patterns":
       [
-        // "node_modules",
-        // "dist"
+        "node_modules",
       ],
       "path": "."
 		},

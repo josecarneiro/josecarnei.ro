@@ -1,60 +1,62 @@
-var config = require('./config');
-
 module.exports = function(grunt) {
 
   grunt.initConfig({
     concurrent: {
-      dev: ['less:dev', 'jade:dev', 'watch', 'connect:server'],
+      dev: ['less:dev', 'uglify:dev', 'copy:dev', 'nodemon', 'watch'],
       options: {
         logConcurrentOutput: true
       }
     },
-    connect: {
-      server: {
-        options: {
-          base: './dist/',
-          open: true,
-          livereload: true,
-          keepalive: true
-        }
-      }
+    nodemon: {
+      dev: {
+        script: './bin/www'
+       }
     },
     less: {
       dev: {
-        files: {'./src/css/style.css': './src/less/style.less'}
+        files: {'./public/css/style.css': './src/less/style.less'},
+        options: {
+          // cleancss: true
+          compress: true
+        }
       },
       dist: {
+        files: {'./public/css/style.css': './src/less/style.less'},
         options: {
           compress: true
-        },
-        files: {'./src/css/style.css': './src/less/style.less'}
+        }
       }
     },
-    jade: {
+    uglify: {
       dev: {
-        options: {
-          pretty: true
-        },
-        files: {'./dist/index.html': './src/jade/*'}
+        src: './src/js/script.js',
+        dest: './public/js/script.min.js',
       },
-      dist: {
-        options: {
-          pretty: false
-        },
-        files: {'./dist/index.html': './src/jade/*'}
-      },
+    },
+    copy: {
+      dev: {
+        files: [
+          {
+            expand: true,
+            cwd: './src',
+            src: 'favicon.ico',
+            dest: './public',
+            filter: 'isFile'
+          },
+        ]
+      }
     },
     watch: {
       less: {
         files: ['./src/less/*'],
-        tasks: ['less:dev', 'jade:dev'],
+        tasks: ['less:dev'],
         options: {
           livereload: true
         },
       },
-      jade: {
-        files: ['./src/jade/*'],
-        tasks: ['jade:dev'],
+      copy: {
+        files: ['./src/*'],
+        tasks: ['copy:dev'],
         options: {
           livereload: true
         },
@@ -62,32 +64,19 @@ module.exports = function(grunt) {
       configFiles: {
         files: [ 'Gruntfile.js' ],
         options: {
-          reload: true
+          reload: true,
+          livereload: true
         }
-      }
-    },
-    // DEPLOY TO FTP SERVER
-    'ftp-deploy': {
-      build: {
-        auth: {
-          host: config.ftp.host,
-          port: config.ftp.port
-        },
-        src: './dist/',
-        dest: './public/www/',
-        exclusions: ['./dist/css']
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-concurrent');
-  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-ftp-deploy');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.registerTask('default', 'concurrent');
-  grunt.registerTask('dist', ['less:dist', 'jade:dist']);
-  grunt.registerTask('deploy', ['less:dist', 'jade:dist', 'ftp-deploy']);
+  grunt.registerTask('dist', ['less:dist', 'copy:dev']);
 };
