@@ -7,9 +7,6 @@ block content
         h1 José Maria Carneiro
         h2 Business Student, Web Developer
         ul
-          li
-            a(href='mailto:jose@light.pt') jose@light.pt
-          li
-            a(href='//facebook.com/josemcarneiro') facebook@josemcarneiro
-          li
-            a(href='//instagram.com/josemcarneiro') instagram@josemcarneiro
+          each link in data.social
+            li
+              a(href='#{link.url}') #{link.name}
