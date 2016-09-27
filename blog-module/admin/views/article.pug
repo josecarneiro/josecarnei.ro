@@ -1,0 +1,14 @@
+extends layout/default
+
+block content
+  -var article = null;
+  -if(data) article = data.article;
+  form(method="post", action= article ? settings.base + "/edit/" + article._id : settings.base + "/new")
+    label(for="title") Title
+    input(type="text", name="title", placeholder="The article's Title", value= article ? article.title : false)
+    label(for="body") Body
+    textarea(name="body", placeholder="Write your article here...")= article ? article.body : ''
+    button Save
+  if article
+    form(method="post", action= settings.base + "/delete/" + article._id)
+      button Delete Article

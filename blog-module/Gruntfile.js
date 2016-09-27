@@ -2,25 +2,26 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     concurrent: {
-      dev: ['less:dev', 'uglify:dev', 'copy:dev', 'nodemon', 'watch'],
+      // dev: ['less:dev', 'uglify:dev', 'copy:dev', 'nodemon', 'watch'],
+      dev: ['less:dev', 'uglify:dev', 'copy:dev', 'watch'],
       options: {
         logConcurrentOutput: true
       }
     },
-    nodemon: {
-      dev: {
-        script: './bin/www'
-       }
-    },
+    // nodemon: {
+    //   dev: {
+    //     script: './bin/www'
+    //    }
+    // },
     less: {
       dev: {
-        files: {'./base/public/css/style.css': './base/src/less/style.less', './base/public/css/essential.css': './base/src/less/essential.less'},
+        files: {'./base/public/css/style.css': './base/src/less/style.less', './admin/public/css/style.css': './admin/src/less/style.less'},
         options: {
           cleancss: true
         }
       },
       dist: {
-        files: {'./base/public/css/style.css': './base/src/less/style.less', './base/public/css/essential.css': './base/src/less/essential.less'},
+        files: {'./base/public/css/style.css': './base/src/less/style.less', './admin/public/css/style.css': './admin/src/less/style.less'},
         options: {
           compress: true
         }
@@ -39,7 +40,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: './base/src',
             src: 'favicon.ico',
-            dest: './base/public',
+            dest: ['./base/public', './admin/public'],
             filter: 'isFile'
           },
         ]
@@ -47,14 +48,14 @@ module.exports = function(grunt) {
     },
     watch: {
       less: {
-        files: ['./base/src/less/*'],
+        files: ['./base/src/less/*', './admin/src/less/*'],
         tasks: ['less:dev'],
         options: {
           livereload: true
         },
       },
       copy: {
-        files: ['./base/src/*'],
+        files: ['./src/*'],
         tasks: ['copy:dev'],
         options: {
           livereload: true
@@ -71,7 +72,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-concurrent');
-  grunt.loadNpmTasks('grunt-nodemon');
+  // grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-copy');

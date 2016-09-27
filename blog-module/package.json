@@ -1,0 +1,25 @@
+{
+  "name": "blogit",
+  "version": "0.1.0",
+  "author": {
+    "name": "José Carneiro",
+    "email": "jose@light.pt"
+  },
+  "license": "MIT",
+  "homepage": "http://www.projects.light.pt/blogit",
+  "keywords": [
+    "blog"
+  ],
+  "dependencies": {
+    "express": "^4.14.0",
+    "grunt": "^1.0.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  }
+}
