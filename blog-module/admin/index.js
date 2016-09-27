@@ -2,7 +2,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
-var mongoose = require('mongoose');
 var session = require('express-session');
 var mongoStore = require('connect-mongodb-session')(session);
 var path = require('path');
@@ -16,11 +15,6 @@ module.exports = function(config) {
   // BOOTSTRAP APP
   var app = express();
 
-  // DATABASE CONNECTION
-  mongoose.connect(config.database, function(err) {
-    if(err) throw err;
-  });
-
   // APP SETTINGS
   app.set('base', config.base + '/admin' || '/admin');
   app.set('auth', config.auth);
@@ -32,7 +26,7 @@ module.exports = function(config) {
   // AUTHENTICATION
   app.use(session({
     store: new mongoStore({
-      mongooseConnection: mongoose.connection
+      mongooseConnection: config.connection
     }),
     cookie: {
       maxAge: config.auth.duration || 1000 * 60 * 60 * 24
