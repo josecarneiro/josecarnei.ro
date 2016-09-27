@@ -3,7 +3,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var session = require('express-session');
-var mongoStore = require('connect-mongodb-session')(session);
+var mongoStore = require('connect-mongo')(session);
+// var 
 var path = require('path');
 
 var viewFunctions =  require('./../shared/tools/view-functions');
@@ -24,17 +25,17 @@ module.exports = function(config) {
   app.set('view engine', 'pug');
 
   // AUTHENTICATION
-  // app.use(session({
-  //   store: new mongoStore({
-  //     mongooseConnection: config.connection
-  //   }),
-  //   cookie: {
-  //     maxAge: config.auth.duration || 1000 * 60 * 60 * 24
-  //   },
-  //   secret: config.auth.secret,
-  //   resave: true,
-  //   saveUninitialized: false
-  // }));
+  app.use(session({
+    store: new mongoStore({
+      mongooseConnection: config.connection
+    }),
+    cookie: {
+      maxAge: config.auth.duration || 1000 * 60 * 60 * 24
+    },
+    secret: config.auth.secret,
+    resave: true,
+    saveUninitialized: false
+  }));
 
   // BODY PARSER
   app.use(bodyParser.json());
