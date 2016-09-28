@@ -26,6 +26,7 @@ module.exports = function(config) {
           base: 'José Maria Carneiro'
         },
         description: 'José Maria Carneiro. Business Student, Web Developer.',
+        color: '#f3f3f3',
         analytics: config.analytics || ''
       }
     };

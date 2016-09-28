@@ -14,13 +14,19 @@ module.exports = function(grunt) {
     },
     less: {
       dev: {
-        files: {'./base/public/css/style.css': './base/src/less/style.less', './base/public/css/essential.css': './base/src/less/essential.less'},
+        files: {
+          './base/public/css/style.css': './base/src/less/style.less',
+          './base/public/css/essential.css': './base/src/less/essential.less'
+        },
         options: {
           cleancss: true
         }
       },
       dist: {
-        files: {'./base/public/css/style.css': './base/src/less/style.less', './base/public/css/essential.css': './base/src/less/essential.less'},
+        files: {
+          './base/public/css/style.css': './base/src/less/style.less',
+          './base/public/css/essential.css': './base/src/less/essential.less'
+        },
         options: {
           compress: true
         }
