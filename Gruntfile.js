@@ -38,7 +38,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: './base/src',
-            src: 'favicon.ico',
+            src: '*',
             dest: './base/public',
             filter: 'isFile'
           },

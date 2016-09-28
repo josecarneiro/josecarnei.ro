@@ -1,7 +1,7 @@
 // DEPENDENCIES
 var express = require('express');
 var path = require('path');
-
+var logger = require('morgan');
 var viewFunctions =  require('./../shared/tools/view-functions');
 
 var router = require('./routes');
@@ -25,6 +25,9 @@ module.exports = function(config) {
 
   // SET PUBLIC FOLDER
   app.use(express.static(config.public));
+
+  // MIDDLEWARE
+  app.use(logger('dev'));
 
   // RES LOCALS
   app.use(function(req, res, next) {

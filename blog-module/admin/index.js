@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var session = require('express-session');
 var mongoStore = require('connect-mongo')(session);
-// var 
+var logger = require('morgan');
 var path = require('path');
 
 var viewFunctions =  require('./../shared/tools/view-functions');
@@ -24,6 +24,15 @@ module.exports = function(config) {
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'pug');
 
+  // SET PUBLIC FOLDER
+  app.use(express.static(path.join(__dirname, 'public')));
+  // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+  // MIEDDLEWARE
+  app.use(logger('dev'));
+  // BODY PARSER
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: false }));
   // AUTHENTICATION
   app.use(session({
     store: new mongoStore({
@@ -36,14 +45,6 @@ module.exports = function(config) {
     resave: true,
     saveUninitialized: false
   }));
-
-  // BODY PARSER
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: false }));
-
-  // SET PUBLIC FOLDER
-  app.use(express.static(path.join(__dirname, 'public')));
-  // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
   app.use(function(req, res, next) {
     req.app.locals.functions = viewFunctions;

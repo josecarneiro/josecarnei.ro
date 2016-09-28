@@ -1,8 +1,8 @@
 // DEPENDENCIES
-var express = require('express');
-var compress = require('compression');
 var path = require('path');
+var express = require('express');
 var mongoose = require('mongoose');
+var logger = require('morgan');
 
 var admin = require('./admin');
 var base = require('./base');
@@ -11,12 +11,8 @@ module.exports = function(config) {
   // ENSURE CONFIG INTEGRITY
   if(!config.database) throw new Error('Blog module requires database path.');
 
-  console.log(config.database);
-
   // DATABASE CONNECTION
-  mongoose.connect(config.database, function(err) {
-    if(err) throw err;
-  });
+  mongoose.connect(config.database, function(err) { if(err) throw err; });
 
   config.connection = mongoose.connection;
 
@@ -24,8 +20,7 @@ module.exports = function(config) {
   var app = express();
 
   // MIDDLEWARE
-  app.use(compress());
-
+  // app.use(logger('dev'));
   // SUB-APPS
   app.use('/admin', admin(config));
   app.use('/', base(config));

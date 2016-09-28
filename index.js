@@ -2,7 +2,7 @@
 
 var express = require('express');
 var logger = require('morgan');
-// var compress = require('compression');
+var compress = require('compression');
 var path = require('path');
 
 var blog = require('./blog-module');
@@ -33,12 +33,11 @@ var blogConfig = {
 };
 
 // APP SETTINGS
-// app.use(compress());
-app.use(logger('dev'));
+app.use(compress());
 
 // ROUTING
 app.use('/blog', blog(blogConfig));
-app.use('/', base);
+app.use('/', base(config));
 
 module.exports = app;
 
