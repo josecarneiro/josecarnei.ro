@@ -1,7 +1,0 @@
-extends layout/default
-
-block content
-  if data.article
-    h2 #{data.article.title}
-    p #{data.article.body}
-    p #{functions.formatDate(data.article.date)}

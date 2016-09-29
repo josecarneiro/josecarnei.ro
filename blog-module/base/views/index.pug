@@ -1,9 +1,0 @@
-extends layout/default
-
-block content
-  if data.articles
-    -var articles = data.articles;
-    include components/loop
-    if data.pagination
-      -var pagination = data.pagination;
-      include components/pagination

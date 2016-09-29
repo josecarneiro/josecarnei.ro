@@ -2,13 +2,13 @@
   "name": "light",
   "description": "José Carneiro's personal website",
   "author": "José Maria Carneiro",
-  "homepage": "http://light.pt",
+  "homepage": "https://light.pt",
   "version": "0.3.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/josecarneiro/light.git"
   },
-  "private": false,
+  "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "postinstall": "grunt dist"
@@ -21,12 +21,15 @@
     "compression": "^1.6.2",
     "connect-mongo": "^1.3.2",
     "debug": "^2.2.0",
+    "deep-extend": "^0.4.1",
+    "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "express-session": "^1.14.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "mongoose": "^4.5.8",
     "morgan": "^1.7.0",

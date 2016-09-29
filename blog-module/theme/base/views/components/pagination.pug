@@ -1,0 +1,13 @@
+if pagination
+  -var pagination = data.pagination;
+  nav.nav-horizontal
+    ul
+      if pagination.previous
+        li
+          a.btn.btn-default(href= functions.makeUrl(settings.base, 'page', pagination.previous))= pagination.previous
+      if pagination.current
+        li
+          span.btn.btn-default.active= pagination.current
+      if pagination.next
+        li
+          a.btn.btn-default(href= functions.makeUrl(settings.base, 'page', pagination.next))= pagination.next

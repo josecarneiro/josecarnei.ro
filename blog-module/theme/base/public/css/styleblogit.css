@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box; }
+
+*, *:after, *:before {
+  box-sizing: inherit; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+  background-color: #f3f3f3;
+  overflow: hidden; }
+
+a {
+  display: inline-block;
+  color: #555;
+  text-decoration: none;
+  background-color: transparent;
+  transition: color 0.3s cubic-bezier(0.55, 0, 0.5, 0.75); }
+  a:active, a:hover {
+    color: inherit;
+    outline: 0; }
+
+h1, h2 {
+  margin: 0 0 .6em;
+  font-weight: 300; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+  ul li {
+    display: block;
+    list-style: none; }
+
+.container {
+  max-width: 1160px;
+  padding: 1em 1em;
+  margin: 0 auto; }
+
+.nav-horizontal ul li {
+  float: left; }
+.nav-horizontal a, .nav-horizontal button, .nav-horizontal .btn {
+  display: block;
+  width: 4em;
+  margin-right: 0.6em;
+  text-align: center;
+  font-weight: bold; }
+
+nav a, nav button, nav .btn {
+  display: block; }
+
+button {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  line-height: inherit; }
+
+.btn {
+  display: inline-block;
+  padding: 1.25em;
+  color: inherit;
+  line-height: inherit;
+  border: 2px solid transparent; }
+
+.btn-default {
+  border-color: #111; }
+
+/*# sourceMappingURL=styleblogit.css.map */

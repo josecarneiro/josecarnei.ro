@@ -1,36 +1,45 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
+    config: {
+      theme: {
+        name: 'base',
+        path: './theme/<%= config.theme.name %>'
+      },
+      dirs: {
+        admin: './core/admin'
+      },
+    },
+    // pkg: grunt.file.readJSON('package.json'),
     concurrent: {
-      // dev: ['less:dev', 'uglify:dev', 'copy:dev', 'nodemon', 'watch'],
-      dev: ['less:dev', 'uglify:dev', 'copy:dev', 'watch'],
+      dev: ['sass:dev', 'uglify:dev', 'copy:dev', 'nodemon', 'watch'],
       options: {
         logConcurrentOutput: true
       }
     },
-    // nodemon: {
-    //   dev: {
-    //     script: './bin/www'
-    //    }
-    // },
-    less: {
+    nodemon: {
       dev: {
-        files: {'./base/public/css/style.css': './base/src/less/style.less', './admin/public/css/style.css': './admin/src/less/style.less'},
-        options: {
-          cleancss: true
+        script: './server.js'
+       }
+    },
+    sass: {
+      dev: {
+        files: {
+          '<%= config.theme.path %>/public/css/style.css': '<%= config.theme.path %>/src/sass/style.scss',
+          './core/admin/public/css/style.css': './core/admin/src/sass/style.scss'
         }
       },
       dist: {
-        files: {'./base/public/css/style.css': './base/src/less/style.less', './admin/public/css/style.css': './admin/src/less/style.less'},
-        options: {
-          compress: true
+        files: {
+          '<%= config.theme.path %>/public/css/style.css': '<%= config.theme.path %>/src/sass/style.scss',
+          './core/admin/public/css/style.css': './core/admin/src/sass/style.scss'
         }
       }
     },
     uglify: {
       dev: {
-        src: './base/src/js/script.js',
-        dest: './base/public/js/script.min.js',
+        src: '<%= config.theme.path %>/src/js/script.js',
+        dest: '<%= config.theme.path %>/public/js/script.min.js',
       },
     },
     copy: {
@@ -38,24 +47,24 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: './base/src',
+            cwd: '<%= config.theme.path %>/src',
             src: 'favicon.ico',
-            dest: ['./base/public', './admin/public'],
+            dest: ['<%= config.theme.path %>/public', './core/admin/public'],
             filter: 'isFile'
           },
         ]
       }
     },
     watch: {
-      less: {
-        files: ['./base/src/less/*', './admin/src/less/*'],
-        tasks: ['less:dev'],
+      sass: {
+        files: ['<%= config.theme.path %>/src/sass/*', './core/admin/src/sass/*'],
+        tasks: ['sass:dev'],
         options: {
           livereload: true
-        },
+        }
       },
       copy: {
-        files: ['./src/*'],
+        files: ['<%= config.theme.path %>/src/*'],
         tasks: ['copy:dev'],
         options: {
           livereload: true
@@ -71,12 +80,13 @@ module.exports = function(grunt) {
     }
   });
 
+  // LOAD TASKS
   grunt.loadNpmTasks('grunt-concurrent');
-  // grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.registerTask('default', 'concurrent');
-  grunt.registerTask('dist', ['less:dist', 'uglify:dev', 'copy:dev']);
+  grunt.registerTask('dist', ['sass:dist', 'uglify:dev', 'copy:dev']);
 };

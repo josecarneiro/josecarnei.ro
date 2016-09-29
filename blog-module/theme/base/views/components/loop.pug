@@ -1,0 +1,5 @@
+for article in articles
+  article.article-item
+    a(href= functions.makeUrl((settings.base ? settings.base : ''), article._id))
+      h2 #{article.title}
+      h4 #{functions.formatDate(article.date)}
