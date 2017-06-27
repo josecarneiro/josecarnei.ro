@@ -2,3 +2,6 @@ node_modules
 dist
 src/css
 *.sublime-workspace
+.env
+package-lock.json
+.sass-cache

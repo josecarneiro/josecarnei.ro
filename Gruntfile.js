@@ -1,34 +1,39 @@
-module.exports = function(grunt) {
+'use strict';
+
+module.exports = grunt => {
 
   grunt.initConfig({
     concurrent: {
-      dev: ['less:dev', 'uglify:dev', 'copy:dev', 'nodemon', 'watch'],
+      dev: [ 'sass:dev', 'uglify:dev', 'copy:dev', 'nodemon', 'watch' ],
       options: {
         logConcurrentOutput: true
       }
     },
     nodemon: {
       dev: {
-        script: './bin/www'
+        script: './bin/server.js',
+        options: {
+          ignore: []
+        }
        }
     },
-    less: {
+    sass: {
       dev: {
         files: {
-          './base/public/css/style.css': './base/src/less/style.less',
-          './base/public/css/essential.css': './base/src/less/essential.less'
+          './base/public/css/style.css': './base/src/style/style.scss',
+          './base/public/css/essential.css': './base/src/style/essential.scss'
         },
         options: {
-          cleancss: true
+          style: 'expanded'
         }
       },
       dist: {
         files: {
-          './base/public/css/style.css': './base/src/less/style.less',
-          './base/public/css/essential.css': './base/src/less/essential.less'
+          './base/public/css/style.css': './base/src/style/style.scss',
+          './base/public/css/essential.css': './base/src/style/essential.scss'
         },
         options: {
-          compress: true
+          style: 'compressed'
         }
       }
     },
@@ -52,9 +57,9 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      less: {
-        files: ['./base/src/less/*'],
-        tasks: ['less:dev'],
+      sass: {
+        files: ['./base/src/style/*'],
+        tasks: ['sass:dev'],
         options: {
           livereload: true
         },
@@ -79,9 +84,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.registerTask('default', 'concurrent');
-  grunt.registerTask('dist', ['less:dist', 'uglify:dev', 'copy:dev']);
+  grunt.registerTask('dist', ['sass:dist', 'uglify:dev', 'copy:dev']);
 };

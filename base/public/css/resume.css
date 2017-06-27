@@ -1,0 +1,14 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Open Sans";
+  font-size: 1.125em;
+}
+
+/*# sourceMappingURL=resume.css.map */

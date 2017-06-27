@@ -5,13 +5,13 @@
       "file_exclude_patterns":
       [
         "README.md",
-        ".gitignore",
-        ".env",
-        "server.js"
+        // ".gitignore",
+        // ".env",
+        // "server.js"
       ],
       "folder_exclude_patterns":
       [
-        // "node_modules",
+        "node_modules",
         ".sass-cache"
       ],
       "path": "."

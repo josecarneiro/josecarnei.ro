@@ -1,7 +1,9 @@
-var express = require('express');
-var router = express.Router();
+'use strict';
 
-router.get('/', function(req, res, next) {
+const express = require('express');
+const router = express.Router();
+
+router.get('/', (req, res, next) => {
   res.locals.meta.description = 'José Maria Carneiro. Business Student, Web Developer.';
   res.locals.data = {
     social: [{
@@ -14,7 +16,7 @@ router.get('/', function(req, res, next) {
       name: 'instagram@josemcarneiro',
       url: '//instagram.com/josemcarneiro'
     }]
-  }
+  };
   res.render('index');
 });
 

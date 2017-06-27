@@ -1,14 +1,16 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
+'use strict';
 
-var routes = require('./routes/index');
+const path = require('path');
+const express = require('express');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const favicon = require('serve-favicon');
 
-module.exports = function(config) {
+const routes = require('./routes/index');
+
+module.exports = config => {
   if(!config) config = {};
-  var app = express();
+  const app = express();
 
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'pug');
@@ -18,7 +20,7 @@ module.exports = function(config) {
   app.use(logger('dev'));
   app.use(bodyParser.json(), bodyParser.urlencoded({ extended: false }));
 
-  app.use(function(req, res, next) {
+  app.use((req, res, next) => {
     res.locals = {
       env: app.get('env') === 'development' ? 'dev' : 'production',
       meta: {
@@ -35,16 +37,16 @@ module.exports = function(config) {
 
   app.use('/', routes);
 
-  app.use(function(req, res, next) {
-    var err = new Error('Page not found :(');
-    err.status = 404;
-    next(err);
+  app.use((req, res, next) => {
+    let error = new Error('Page not found :(');
+    error.status = 404;
+    next(error);
   });
 
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    if(app.get('env') ==! 'development') delete err.stack;
-    res.render('error', {error: err});
+  app.use((error, req, res, next) => {
+    res.status(error.status || 500);
+    if (app.get('env') !== 'development') delete error.stack;
+    res.render('error', { error });
   });
 
   return app;
