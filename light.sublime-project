@@ -2,19 +2,20 @@
 	"folders":
 	[
 		{
-      "file_exclude_patterns":
-      [
-        "README.md",
-        // ".gitignore",
-        // ".env",
-        // "server.js"
-      ],
-      "folder_exclude_patterns":
-      [
-        "node_modules",
-        ".sass-cache"
-      ],
-      "path": "."
-		},
+			"file_exclude_patterns":
+			[
+				"README.md",
+				".gitignore",
+				".env",
+				"server.js",
+				"package-lock.json"
+			],
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				".sass-cache"
+			],
+			"path": "."
+		}
 	]
 }

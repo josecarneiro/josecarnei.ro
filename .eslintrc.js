@@ -1,4 +1,4 @@
-{
+module.exports = {
   "extends": "eslint:recommended",
   "env": {
     "browser": false,
@@ -19,4 +19,4 @@
     "no-undef": 1,
     "no-unused-vars": 0
   }
-}
+};

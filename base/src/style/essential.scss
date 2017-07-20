@@ -1,7 +1,14 @@
 @import 'variables';
 
-// GENERAL
+$blue: #0015ff;
 
+$page-background: #f3f3f3;
+// $page-background: $blue;
+$page-color: $black;
+$anchor-color: $grey-dark;
+$anchor-color: $grey-dark;
+
+// GENERAL
 * {
   &,
   &:after,
@@ -27,18 +34,19 @@ html {
 body {
   margin: 0;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: $black;
-  background-color: #f3f3f3;
+  color: $page-color;
+  background-color: $page-background;
   overflow: hidden;
 }
 
 a {
   display: inline-block;
-  color: $grey-dark;
+  color: $anchor-color;
   text-decoration: none;
   background-color: transparent;
   transition: color $speed-medium $ease-cubic;
-  &:active, &:hover {
+  &:active,
+  &:hover {
     color: inherit;
     outline: 0;
   }
