@@ -1,0 +1,18 @@
+// MIXINS
+
+@mixin media($size) {
+  // $size: inspect($size);
+  $sizes: (
+    'extra-small': 20em,
+    'small': 30em,
+    'medium': 40em,
+    'large': 60em,
+    'extra-large': 80em,
+    'extra-extra-large': 120em
+  );
+  @if map-has-key($sizes, $size) {
+    @media (min-width: #{map-get($sizes, $size)}) {
+      @content;
+    }
+  }
+}

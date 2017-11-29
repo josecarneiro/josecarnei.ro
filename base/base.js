@@ -27,7 +27,7 @@ module.exports = config => {
         title: {
           base: 'José Maria Carneiro'
         },
-        description: 'José Maria Carneiro. Business Student, Web Developer.',
+        description: 'José Maria Carneiro. Full-Stack Developer.',
         color: '#f3f3f3',
         analytics: config.analytics || ''
       }

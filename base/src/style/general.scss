@@ -1,0 +1,25 @@
+// GENERAL
+
+* {
+  &,
+  &:after,
+  &:before {
+    box-sizing: border-box;
+  }
+}
+
+html,
+body,
+.container,
+.vertical-align-container {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
