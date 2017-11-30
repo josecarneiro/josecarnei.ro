@@ -14,7 +14,7 @@
     "dev": "nodemon ./bin/server.js",
     "build": "grunt dist",
     "postinstall": "npm run build",
-    "heroku-postbuild": "bundle install && grunt dist"
+    "heroku-prebuild": "bundle install"
   },
   "engines": {
     "node": ">8.9.1"
