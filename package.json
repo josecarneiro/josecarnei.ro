@@ -1,9 +1,9 @@
 {
-  "name": "light",
+  "name": "josecarnei.ro",
   "description": "José Carneiro's personal website",
   "author": "José Maria Carneiro",
-  "homepage": "https://light.pt",
-  "version": "0.3.0",
+  "homepage": "https://josecarnei.ro",
+  "version": "0.4.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/josecarneiro/light.git"
@@ -16,7 +16,7 @@
     "postinstall": "npm run build"
   },
   "engines": {
-    "node": ">8.0.0"
+    "node": ">8.9.1"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
