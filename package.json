@@ -12,9 +12,7 @@
   "scripts": {
     "start": "node ./bin/server.js",
     "dev": "nodemon ./bin/server.js",
-    "build": "grunt dist",
-    "postinstall": "npm run build",
-    "heroku-prebuild": "bundle install"
+    "build": "grunt dist"
   },
   "engines": {
     "node": ">8.9.1"
