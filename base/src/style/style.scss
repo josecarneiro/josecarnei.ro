@@ -1,21 +1,10 @@
-@import 'reset';
+// MAIN STYLES FILE
+
 @import 'variables';
 @import 'mixins';
+@import 'reset';
 @import 'general';
-
-html {
-  padding: 1em;
-  background-color: $white;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: $font-body;
-  color: $page-color;
-  background-color: $page-background;
-  overflow: hidden;
-}
+@import 'typography';
 
 a {
   display: inline-block;
@@ -30,22 +19,6 @@ a {
   }
 }
 
-h1,
-h2 {
-  // margin: 0 0 .6em;
-  font-weight: 300;
-}
-
-h1 {
-  font-size: 2.5em;
-  @include media('small') {
-    font-size: 3em;
-  }
-  @include media('medium') {
-    font-size: 4em;
-  }
-}
-
 ul {
   display: flex;
   flex-direction: column;
@@ -54,7 +27,7 @@ ul {
     flex-direction: row;
   }
   li {
-    @media (min-width: $tablet) {
+    @include media('medium') {
       margin-right: 1em;
     }
     a {
@@ -65,15 +38,71 @@ ul {
 
 // STRUCTURAL
 
-.container {
+.full-height {
   display: flex;
   align-items: center;
-  justify-content: stretch;
-  max-width: 80rem;
-  padding: 1em 2em;
-  margin: 0 auto;
+  border: 1em solid #fff;
+  overflow: hidden;
 }
 
-.vertical-align {
-  flex: 1 1 auto;
+.container {
+  width: 100%;
+  max-width: 80rem;
+  padding: 0 1em;
+  margin: 0 auto;
+  @include media ('medium') {
+    padding: 0 2em;
+  }
+}
+
+.code-container {
+  position: relative;
+  padding: 1.75em 0;
+  padding-top: 1.75em * 2;
+  overflow: hidden;
+  @include media ('medium') {
+    width: 1.75em (1.75em * 2);
+  }
+  h1 {
+    margin-bottom: 1.75rem;
+    font-size: 3em;
+    line-height: 1.75rem * 2;
+  }
+  p {
+    margin-bottom: 1.75rem;
+    line-height: 1.75;
+  }
+  .line-numbers {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include media('medium') {
+      display: block;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      width: 1.75em;
+      @include media ('medium') {
+        width: 1.75em * 2;
+      }
+    }
+    li {
+      height: 1.75em;
+      width: 100%;
+      padding-right: (0.75em / 2);
+      line-height: 1.75;
+      text-align: right;
+      color: #8a8a8a;
+      background-color: lighten(#ccc, 19%);
+      &:nth-child(2n) {
+        background-color: lighten(#ccc, 16%);
+      }
+    }
+  }
+  .container {
+    max-width: 42em;
+  }
 }

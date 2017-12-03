@@ -1,4 +1,4 @@
-// GENERAL
+// GENERAL STYLES
 
 * {
   &,
@@ -10,16 +10,23 @@
 
 html,
 body,
-.container,
-.vertical-align-container {
+.full-height {
   height: 100%;
   width: 100%;
 }
 
 html {
   box-sizing: border-box;
+  background-color: $white;
 }
 
 body {
   margin: 0;
+  margin: 0;
+  font-family: $font-body;
+  font-weight: 300;
+  color: $page-color;
+  background-color: $page-background;
+  overflow-x: hidden;
+  overflow-y: auto;
 }

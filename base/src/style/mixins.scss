@@ -1,7 +1,6 @@
 // MIXINS
 
 @mixin media($size) {
-  // $size: inspect($size);
   $sizes: (
     'extra-small': 20em,
     'small': 30em,
