@@ -13,9 +13,8 @@ block content
   if env === 'development'
     section.code-container
       .line-numbers
-        ul
-          each val, index in new Array(50)
-            li= index + 1
+        each val, index in new Array(50)
+          div= index + 1
       .container
         h1 Motivation Letter
         //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et esse numquam eos, debitis sequi iusto id voluptate dignissimos, voluptatum repellendus! Dicta laboriosam odio sapiente harum reiciendis corrupti quos ad ab!

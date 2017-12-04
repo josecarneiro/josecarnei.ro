@@ -22,7 +22,7 @@ module.exports = config => {
 
   app.use((req, res, next) => {
     res.locals = {
-      env: app.get('env') === 'development' ? 'dev' : 'production',
+      env: app.get('env') === 'development' ? 'development' : 'production',
       meta: {
         title: {
           base: 'José Maria Carneiro'
