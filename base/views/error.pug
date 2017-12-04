@@ -1,11 +1,10 @@
 extends layout/default
 
 block content
-  .container
-    .vertical-align-container
-      .vertical-align
-        h1=error.status
-        h2=error.message
-        a(href="/") Go back
-        if(error.stack)
-          pre=error.stack
+  section.full-height
+    .container
+      h1=error.status
+      h2=error.message
+      a(href="/") Go back
+      if(error.stack)
+        pre=error.stack

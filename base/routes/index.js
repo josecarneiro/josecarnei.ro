@@ -16,11 +16,14 @@ router.get('/', (req, res, next) => {
       name: 'linkedin@josemcarneiro',
       url: 'https://linkedin.com/in/josemcarneiro'
     }, {
-      name: 'instagram@josemcarneiro',
-      url: '//instagram.com/josemcarneiro'
+      name: 'instagram@josecarnei.ro',
+      url: 'https://instagram.com/josecarnei.ro'
     }, {
       name: 'facebook@josemcarneiro',
-      url: '//facebook.com/josemcarneiro'
+      url: 'https://facebook.com/josemcarneiro'
+    }, {
+      name: 'dribbble@josec',
+      url: 'https://dribbble.com/josec'
     }]
   };
   res.render('index');

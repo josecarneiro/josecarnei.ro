@@ -5,3 +5,4 @@ src/css
 .env
 package-lock.json
 .sass-cache
+.DS_store
