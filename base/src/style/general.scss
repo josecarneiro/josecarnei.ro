@@ -18,6 +18,9 @@ body,
 html {
   box-sizing: border-box;
   background-color: $white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {

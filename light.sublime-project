@@ -19,7 +19,7 @@
 			[
 				"node_modules",
 				".sass-cache",
-				"base/public"
+				// "base/public"
 			],
 			"path": "."
 		}

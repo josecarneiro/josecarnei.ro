@@ -1,6 +1,7 @@
 node_modules
 dist
 src/css
+*.css.map
 *.sublime-workspace
 .env
 package-lock.json
