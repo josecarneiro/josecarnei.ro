@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,IAAK;EACH,UAAU,EAAE,UAAU;;;AAItB,oBAEQ;EACN,UAAU,EAAE,OAAO;;;AAIvB,IAAK;EAEH,WAAW,EAhBD,WAAW;EAiBrB,SAAS,EAAE,OAAO",
-"sources": ["../../src/style/resume/style.scss"],
-"names": [],
-"file": "resume.css"
-}

@@ -23,7 +23,8 @@ module.exports = grunt => {
           './base/public/css/style.css': './base/src/style/style.scss'
         },
         options: {
-          style: 'expanded'
+          style: 'expanded',
+          sourcemap: 'none'
         }
       },
       dist: {
@@ -31,7 +32,8 @@ module.exports = grunt => {
           './base/public/css/style.css': './base/src/style/style.scss'
         },
         options: {
-          style: 'compressed'
+          style: 'compressed',
+          sourcemap: 'none'
         }
       }
     },

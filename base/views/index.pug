@@ -5,9 +5,10 @@ block content
     .container
       h1 josecarnei.ro
       h2 Full-Stack Developer
+      //- h5 Lisbon, Portugal
       ul
         each link in data.social
           li
             a(href=link.url)=link.name
-  if env === 'development'
-    include motivation-letter
+  //- if env === 'development'
+  //-   include motivation-letter

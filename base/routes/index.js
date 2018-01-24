@@ -29,4 +29,8 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+router.get('/motivation-letter', (req, res, next) => {
+  res.render('./motivation-letter');
+});
+
 module.exports = router;
