@@ -1,0 +1,46 @@
+// TYPOGRAPHY
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5em;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2em;
+  // font-weight: 100;
+  @include media('extra-small') {
+    font-size: 2.25em;
+  }
+  @include media('small') {
+    font-size: 3em;
+  }
+  @include media('medium') {
+    font-size: 4em;
+  }
+}
+
+h2 {
+  font-size: 1.25em;
+  @include media('small') {
+    font-size: 1.5em;
+  }
+  @include media('medium') {
+    font-size: 1.75em;
+  }
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+pre,
+code {
+  // Duh
+  font-family: inherit;
+}

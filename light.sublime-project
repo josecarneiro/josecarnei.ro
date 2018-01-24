@@ -5,15 +5,21 @@
 			"file_exclude_patterns":
 			[
 				"README.md",
-				".gitignore",
 				".env",
-				"server.js",
-				"package-lock.json"
+				"package-lock.json",
+				// ".gitignore",
+				"Gemfile",
+				"Gemfile.lock",
+				"Procfile",
+				"yarn.lock",
+				"base/src/favicon.ico",
+				"base/src/robots.txt"
 			],
 			"folder_exclude_patterns":
 			[
 				"node_modules",
-				".sass-cache"
+				".sass-cache",
+				// "base/public"
 			],
 			"path": "."
 		}

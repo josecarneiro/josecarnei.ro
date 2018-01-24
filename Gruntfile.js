@@ -20,20 +20,20 @@ module.exports = grunt => {
     sass: {
       dev: {
         files: {
-          './base/public/css/style.css': './base/src/style/style.scss',
-          './base/public/css/essential.css': './base/src/style/essential.scss'
+          './base/public/css/style.css': './base/src/style/style.scss'
         },
         options: {
-          style: 'expanded'
+          style: 'expanded',
+          sourcemap: 'none'
         }
       },
       dist: {
         files: {
-          './base/public/css/style.css': './base/src/style/style.scss',
-          './base/public/css/essential.css': './base/src/style/essential.scss'
+          './base/public/css/style.css': './base/src/style/style.scss'
         },
         options: {
-          style: 'compressed'
+          style: 'compressed',
+          sourcemap: 'none'
         }
       }
     },

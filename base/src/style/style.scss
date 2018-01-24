@@ -1,37 +1,14 @@
+// MAIN STYLES FILE
+
 @import 'variables';
-
-// GENERAL
-
-* {
-  &, &:after, &:before {
-    box-sizing: border-box;
-  }
-}
-
-html,
-body,
-.container,
-.vertical-align-container {
-  height: 100%;
-  width: 100%;
-}
-
-html {
-  padding: 1em;
-  background-color: $white;
-}
-
-body {
-  margin: 0;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: $black;
-  background-color: #f3f3f3;
-  overflow: hidden;
-}
+@import 'mixins';
+@import 'reset';
+@import 'general';
+@import 'typography';
 
 a {
   display: inline-block;
-  color: $grey-dark;
+  color: $anchor-color;
   text-decoration: none;
   background-color: transparent;
   transition: color $speed-medium $ease-cubic;
@@ -42,22 +19,17 @@ a {
   }
 }
 
-h1, h2 {
-  margin: 0 0 .6em;
-  font-weight: 300;
-}
-
 ul {
-  padding: 0;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 2em;
+  @include media('medium') {
+    flex-direction: row;
+  }
   li {
-    display: inline-block;
-    list-style: none;
-    @media (max-width: $tablet) {
-      display: block;
-    }
-    a {
-      padding: .6em 0;
+    margin-bottom: (1.75 / 2) * 1em;
+    @include media('medium') {
       margin-right: 1em;
     }
   }
@@ -65,17 +37,70 @@ ul {
 
 // STRUCTURAL
 
-.vertical-align-container {
-  display: table;
-}
-
-.vertical-align-container .vertical-align {
-  display: table-cell;
-  vertical-align: middle;
+.full-height {
+  display: flex;
+  align-items: center;
+  border: 0 solid #fff;
+  overflow: hidden;
+  @include media('extra-small') {
+    border-width: 1em;
+  }
 }
 
 .container {
-  max-width: 1160px;
-  padding: 1em 2em;
+  width: 100%;
+  max-width: 80rem;
+  padding: 0 1em;
   margin: 0 auto;
+  @include media ('medium') {
+    padding: 0 2em;
+  }
+}
+
+.code-container {
+  position: relative;
+  padding: 1.75em 0;
+  padding-top: 1.75em * 2;
+  overflow: hidden;
+  @include media ('medium') {
+    width: 1.75em (1.75em * 2);
+  }
+  h1 {
+    margin-bottom: 1.75rem;
+    font-size: 3em;
+    line-height: 1.75rem * 2;
+  }
+  p {
+    margin-bottom: 1.75rem;
+    line-height: 1.75;
+  }
+  .line-numbers {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    width: 1.75em;
+    @include media('medium') {
+      display: block;
+      width: 1.75em * 2;
+    }
+    & > div {
+      height: 1.75em;
+      width: 100%;
+      padding-right: (0.75em / 2);
+      line-height: 1.75;
+      text-align: right;
+      color: #8a8a8a;
+      background-color: lighten(#ccc, 19%);
+      &:nth-child(2n) {
+        background-color: lighten(#ccc, 16%);
+      }
+    }
+  }
+  .container {
+    max-width: 42em;
+  }
 }

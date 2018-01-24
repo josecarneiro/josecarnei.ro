@@ -1,12 +1,14 @@
 extends layout/default
 
 block content
-  .container
-    .vertical-align-container
-      .vertical-align
-        h1 José Maria Carneiro
-        h2 Business Student, Web Developer
-        ul
-          each link in data.social
-            li
-              a(href= link.url)=link.name
+  section.full-height
+    .container
+      h1 josecarnei.ro
+      h2 Full-Stack Developer
+      //- h5 Lisbon, Portugal
+      ul
+        each link in data.social
+          li
+            a(href=link.url)=link.name
+  //- if env === 'development'
+  //-   include motivation-letter

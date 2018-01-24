@@ -22,12 +22,12 @@ module.exports = config => {
 
   app.use((req, res, next) => {
     res.locals = {
-      env: app.get('env') === 'development' ? 'dev' : 'production',
+      env: app.get('env') === 'development' ? 'development' : 'production',
       meta: {
         title: {
           base: 'José Maria Carneiro'
         },
-        description: 'José Maria Carneiro. Business Student, Web Developer.',
+        description: 'José Maria Carneiro. Full-Stack Developer.',
         color: '#f3f3f3',
         analytics: config.analytics || ''
       }
