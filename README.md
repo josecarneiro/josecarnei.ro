@@ -1,6 +1,6 @@
-# Light.pt
+# josecarnei.ro
 
-This is the repository for José Carneiro´s personal website, `light.pt`.
+This is the repository for José Carneiro´s personal website, `josecarnei.ro`.
 
 ### Installation and Development
 
