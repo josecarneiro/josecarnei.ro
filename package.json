@@ -13,7 +13,7 @@
     "start": "node ./server/index.js",
     "dev": "nodemon ./server/index.js",
     "build": "./script/build.sh",
-    "heroku-postbuild": "./script/build.shg"
+    "heroku-postbuild": "./script/build.sh"
   },
   "engines": {
     "node": ">=8.6.0"
