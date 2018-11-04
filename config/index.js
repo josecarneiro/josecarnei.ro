@@ -1,6 +1,6 @@
 'use strict';
 
-const { env } = process;
+const { env } = process;
 
 const environment = env.NODE_ENV || 'production';
 

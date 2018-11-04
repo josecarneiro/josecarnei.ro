@@ -13,7 +13,8 @@
     "start": "node ./server/index.js",
     "dev": "nodemon ./server/index.js",
     "build": "./script/build.sh",
-    "heroku-postbuild": "./script/build.sh"
+    "heroku-postbuild": "./script/build.sh",
+    "lint": "eslint ."
   },
   "engines": {
     "node": "^10.9.0"
@@ -28,5 +29,8 @@
     "pug": "^2.0.1",
     "route-cache": "^0.4.4",
     "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0"
   }
 }
