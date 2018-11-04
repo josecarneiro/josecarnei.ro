@@ -15,8 +15,7 @@ module.exports = class Server {
     this._options = {
       environment,
       port: this._normalizePort(port),
-      workerCount: 2
-      // workerCount: Math.min(maxWorkers || Infinity, cpuCount) || 1
+      workerCount: Math.min(maxWorkers || Infinity, cpuCount) || 1
     };
     this._app = app;
     this._server = null;
