@@ -17,7 +17,7 @@
 			"**/yarn.lock": true,
 			"**/postcss.config.js": true,
 			"**/Procfile": true,
-			"**/.gitignore": true,
+			// "**/.gitignore": true,
 			"**/.browserslistrc": true
 		}
 	}

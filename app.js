@@ -10,7 +10,7 @@ const compress = require('compression');
 const helmet = require('helmet');
 // const forceSecure = require('./controllers/force-secure');
 const microcache = require('route-cache');
-const favicon = require('serve-favicon');
+// const favicon = require('serve-favicon');
 
 const config = require('./config');
 
@@ -22,7 +22,7 @@ app.use(helmet());
 // app.use(forceSecure({ secure: config.env === 'production' }));
 app.use(compress({ threshold: 0 }));
 
-app.use(favicon(join(__dirname, 'dist/favicon.ico')));
+// app.use(favicon(join(__dirname, 'dist/favicon.ico')));
 
 app.use(serve('dist'))
 

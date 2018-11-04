@@ -1,12 +1,14 @@
 'use strict';
 
-const environment = process.env.NODE_ENV || 'production';
+const { env } = process;
+
+const environment = env.NODE_ENV || 'production';
 
 module.exports = {
-  port: process.env.PORT || 3020,
+  port: env.PORT || 3020,
   env: environment,
   environment,
-  maxWorkers: process.env.MAX_CLUSTER_WORKERS,
-  debug: process.env.DEBUG_MODE === 'true',
-  useMicroCache: environment === 'production'
+  maxWorkers: env.MAX_CLUSTER_WORKERS ? parseInt(env.MAX_CLUSTER_WORKERS) : Infinity,
+  debug: env.DEBUG_MODE === 'true',
+  useMicroCache: env.ENABLE_MICRO_CACHE === 'true'
 };

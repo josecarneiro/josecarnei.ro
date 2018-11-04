@@ -1,17 +1,15 @@
+.DS_Store
+node_modules
 dist
 *.css.map
 *.sublime-workspace
-.env
 package-lock.json
 .sass-cache
 
-.DS_Store
-node_modules
-
 /tests/e2e/reports/
-selenium-debug.log
 
 # local env files
+.env
 .env.local
 .env.*.local
 
@@ -20,9 +18,3 @@ selenium-debug.log
 # Editor directories and files
 .idea
 .vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw*
-
