@@ -1,14 +1,13 @@
 'use strict';
 
 // DEPENDENCIES
-const http = require('http');
 const cluster = require('cluster');
 const cpuCount = require('os').cpus().length;
 const debug = require('debug')('id:server');
 
 module.exports = class Server {
   constructor ({
-    environment = 'development',
+    environment = 'production',
     port,
     maxWorkers,
     app
@@ -16,23 +15,25 @@ module.exports = class Server {
     this._options = {
       environment,
       port: this._normalizePort(port),
-      workerCount: Math.min(maxWorkers || Infinity, cpuCount) || 1
+      workerCount: 2
+      // workerCount: Math.min(maxWorkers || Infinity, cpuCount) || 1
     };
     this._app = app;
     this._server = null;
   }
 
   async initialize () {
-    const { _app: app, _options: { port, environment } } = this;
+    const { _app: app, _options: { port, environment, workerCount } } = this;
     app.set('port', port);
+    this._debug(`Initializing server with ${ workerCount } workers at port ${ port }.`);
     if (environment === 'production' && cluster.isMaster) {
-      for (let i = 0; i < this._workerCount; i++) cluster.fork();
+      for (let i of new Array(workerCount).fill(null)) cluster.fork();
       cluster.on('exit', () => {
         cluster.fork();
       });
     } else {
-      this._server = http.createServer(app);
-      this._server.listen(port);
+      this._debug(`Cluster worker id ${ cluster.worker.id } initiating.`);
+      this._server = app.listen(port);
       this._server.on('error', this._onError.bind(this));
       this._server.on('listening', this._onListening.bind(this));
     }
@@ -73,6 +74,7 @@ module.exports = class Server {
   }
 
   _debug (...args) {
+    console.log(...args);
     debug(...args);
   }
 };

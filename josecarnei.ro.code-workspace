@@ -16,7 +16,7 @@
 			// "**/vue.config.js": true,
 			"**/yarn.lock": true,
 			"**/postcss.config.js": true,
-			"**/Procfile": true,
+			// "**/Procfile": true,
 			// "**/.gitignore": true,
 			"**/.browserslistrc": true
 		}
