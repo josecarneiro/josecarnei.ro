@@ -4,20 +4,16 @@ This is the repository for José Carneiro´s personal website, `josecarnei.ro`.
 
 ### Installation and Development
 
-Install dependencies with:
+Clone the repository. Install dependencies by running the command:
 
 ```
-npm install
+yarn
 ```
-
-Run `grunt` for default dev behavior, `grunt dist` to generate distributable files.
 
 ### Deployment
 
-For deployment to the FTP Server:
 
-```
-npm run deploy
-```
 
-Deployment requires completion of the `config.json` file. A sample `example.config.json` is included.
+### To Do
+
+In future, include SSR practices, following example at `https://github.com/eddyerburgh/vue-cli-ssr-example`.

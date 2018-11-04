@@ -1,9 +1,28 @@
-node_modules
 dist
-src/css
 *.css.map
 *.sublime-workspace
 .env
 package-lock.json
 .sass-cache
-.DS_store
+
+.DS_Store
+node_modules
+
+/tests/e2e/reports/
+selenium-debug.log
+
+# local env files
+.env.local
+.env.*.local
+
+*.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+

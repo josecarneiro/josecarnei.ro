@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/node_modules": true,
+			"**/babel.config.js": true,
+			// "**/vue.config.js": true,
+			"**/yarn.lock": true,
+			"**/postcss.config.js": true,
+			"**/Procfile": true,
+			"**/.gitignore": true,
+			"**/.browserslistrc": true
+		}
+	}
+}
