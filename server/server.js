@@ -10,12 +10,14 @@ module.exports = class Server {
     environment = 'production',
     port,
     maxWorkers,
-    app
+    app,
+    debug: debugOption
   }) {
     this._options = {
       environment,
       port: this._normalizePort(port),
-      workerCount: Math.min(maxWorkers || Infinity, cpuCount) || 1
+      workerCount: Math.min(maxWorkers || Infinity, cpuCount) || 1,
+      debug: debugOption
     };
     this._app = app;
     this._server = null;
@@ -73,8 +75,10 @@ module.exports = class Server {
   }
 
   _debug (...args) {
-    console.log(...args);
-    debug(...args);
+    if (this._options.debug) {
+      console.log(...args);
+      debug(...args);
+    }
   }
 };
 

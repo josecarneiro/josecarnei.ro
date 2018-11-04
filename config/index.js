@@ -9,6 +9,6 @@ module.exports = {
   env: environment,
   environment,
   maxWorkers: env.MAX_CLUSTER_WORKERS ? parseInt(env.MAX_CLUSTER_WORKERS) : Infinity,
-  debug: env.DEBUG_MODE === 'true',
+  debug: env.DEBUG === 'true',
   useMicroCache: env.ENABLE_MICRO_CACHE === 'true'
 };
