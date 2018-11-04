@@ -20,10 +20,10 @@ module.exports = {
   },
   pwa: metaData.pwa,
   pluginOptions: {
-    critical: {
-      width: 1920,
-      height: 1080,
-      base: './../dist'
-    }
+    // critical: {
+    //   width: 1920,
+    //   height: 1080,
+    //   base: './../dist'
+    // }
   }
 };
