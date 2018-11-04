@@ -1,6 +1,6 @@
 'use strict';
 
-require('./load-environment-variables')();
+require('./load-environment-variables')({ environment: process.env.NODE_ENV });
 const { environment, port, maxWorkers } = require('./../config');
 
 const Server = require('./server');
