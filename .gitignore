@@ -1,9 +1,20 @@
+.DS_Store
 node_modules
 dist
-src/css
 *.css.map
 *.sublime-workspace
-.env
 package-lock.json
 .sass-cache
-.DS_store
+
+/tests/e2e/reports/
+
+# local env files
+.env
+.env.local
+.env.*.local
+
+*.log*
+
+# Editor directories and files
+.idea
+.vscode

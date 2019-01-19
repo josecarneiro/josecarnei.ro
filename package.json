@@ -3,42 +3,35 @@
   "description": "José Carneiro's personal website",
   "author": "José Maria Carneiro",
   "homepage": "https://josecarnei.ro",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/josecarneiro/light.git"
+    "url": "https://github.com/josecarneiro/josecarnei.ro.git"
   },
   "private": true,
   "scripts": {
-    "start": "node ./bin/server.js",
-    "dev": "nodemon ./bin/server.js",
-    "build": "grunt dist"
+    "start": "node ./server/index.js",
+    "dev": "nodemon ./server/index.js",
+    "build": "./script/build.sh",
+    "heroku-postbuild": "./script/build.sh",
+    "lint": "eslint ."
   },
   "engines": {
-    "node": ">8.9.1"
+    "node": "^10.9.0"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "compression": "^1.7.1",
-    "debug": "^3.1.0",
-    "deep-extend": "^0.5.0",
-    "dotenv": "^4.0.0",
-    "express": "^4.16.2",
-    "grunt": "^1.0.1",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-less": "^1.3.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^3.2.1",
+    "compression": "^1.7.2",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.3",
+    "helmet": "^3.14.0",
+    "mime-types": "^2.1.21",
+    "mongoose": "^5.0.10",
     "morgan": "^1.9.0",
-    "pug": "^2.0.0-rc.4",
-    "serve-favicon": "^2.4.5",
-    "shortid": "^2.2.6"
+    "pug": "^2.0.1",
+    "route-cache": "^0.4.4",
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
-    "grunt-concurrent": "^2.3.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-nodemon": "^0.4.2",
-    "open": "0.0.5"
+    "eslint": "^5.8.0"
   }
 }
