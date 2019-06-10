@@ -5,11 +5,8 @@
       h2
         | Founder of 
         a(href="https://iindie.com/?ref=josecarneiro") iindie.co
-        //- br
         |  / Full-Stack Developer
-        //- br
         |  / Independent Consultant
-      //- h5 Lisbon, Portugal
       ul
         li(v-for="link of social")
           a(

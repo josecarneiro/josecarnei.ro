@@ -24,7 +24,8 @@
     500: {
       message: 'Server Error :/'
     }
-  }
+  };
+  
   export default {
     props: {
       status: [ String, Number ]
