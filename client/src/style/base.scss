@@ -1,8 +1,9 @@
-@import 'variables';
-@import 'mixins';
-@import 'reset';
-@import 'general';
-@import 'typography';
+@import "variables";
+@import "mixins";
+@import "reset";
+@import "general";
+@import "typography";
+// @import "code";
 
 a {
   display: inline-block;
@@ -22,12 +23,12 @@ ul {
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 2em;
-  @include media('medium') {
+  @include media("medium") {
     flex-direction: row;
   }
   li {
     margin-bottom: (1.75 / 2) * 1em;
-    @include media('medium') {
+    @include media("medium") {
       margin-right: 1em;
     }
   }
@@ -38,9 +39,9 @@ ul {
 .full-height {
   display: flex;
   align-items: center;
-  border: 0 solid #fff;
+  border: 0 solid $white;
   overflow: hidden;
-  @include media('extra-small') {
+  @include media("extra-small") {
     border-width: 1em;
   }
 }
@@ -50,55 +51,7 @@ ul {
   max-width: 80rem;
   padding: 0 1em;
   margin: 0 auto;
-  @include media ('medium') {
+  @include media("medium") {
     padding: 0 2em;
-  }
-}
-
-.code-container {
-  position: relative;
-  padding: 1.75em 0;
-  padding-top: 1.75em * 2;
-  overflow: hidden;
-  @include media ('medium') {
-    width: 1.75em (1.75em * 2);
-  }
-  h1 {
-    margin-bottom: 1.75rem;
-    font-size: 3em;
-    line-height: 1.75rem * 2;
-  }
-  p {
-    margin-bottom: 1.75rem;
-    line-height: 1.75;
-  }
-  .line-numbers {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    width: 1.75em;
-    @include media('medium') {
-      display: block;
-      width: 1.75em * 2;
-    }
-    & > div {
-      height: 1.75em;
-      width: 100%;
-      padding-right: (0.75em / 2);
-      line-height: 1.75;
-      text-align: right;
-      color: #8a8a8a;
-      background-color: lighten(#ccc, 19%);
-      &:nth-child(2n) {
-        background-color: lighten(#ccc, 16%);
-      }
-    }
-  }
-  .container {
-    max-width: 42em;
   }
 }
