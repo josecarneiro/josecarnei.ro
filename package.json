@@ -3,18 +3,18 @@
   "description": "José Carneiro's personal website",
   "author": "José Maria Carneiro",
   "homepage": "https://josecarnei.ro",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/josecarneiro/josecarnei.ro.git"
   },
-  "private": true,
   "scripts": {
     "build": "./script/build.sh",
     "lint": "eslint ."
   },
   "engines": {
-    "node": "^12.6.0"
+    "node": "^12.6.0",
+    "yarn": "^1.17.3"
   },
   "devDependencies": {
     "eslint": "^6.6.0"
