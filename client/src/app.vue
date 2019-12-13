@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang="pug" functional>
   .shell
     router-view
 </template>

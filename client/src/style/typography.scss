@@ -7,33 +7,33 @@ h2 {
 
 h1 {
   font-size: 2em;
-  @include media("extra-small") {
+  @include media('extra-small') {
     font-size: 2.25em;
   }
-  @include media("small") {
+  @include media('small') {
     font-size: 3em;
   }
-  @include media("medium") {
+  @include media('medium') {
     font-size: 4em;
   }
 }
 
 h2 {
   font-size: 1.25em;
-  @include media("small") {
+  @include media('small') {
     font-size: 1.5em;
   }
-  @include media("medium") {
+  @include media('medium') {
     font-size: 1.75em;
   }
 }
 
-p {
-  margin: 0;
-  margin-bottom: 1rem;
-}
+// p {
+//   margin: 0;
+//   margin-bottom: 1rem;
+// }
 
-pre,
-code {
-  font-family: inherit;
-}
+// pre,
+// code {
+//   font-family: inherit;
+// }
