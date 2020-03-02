@@ -9,12 +9,12 @@
     "url": "https://github.com/josecarneiro/josecarnei.ro.git"
   },
   "scripts": {
-    "build": "./script/build.sh",
+    "build": "cd client && yarn install --production=false && yarn build",
     "lint": "eslint ."
   },
   "engines": {
-    "node": "^12.6.0",
-    "yarn": "^1.17.3"
+    "node": ">=12.6.0",
+    "yarn": ">=1.17.3"
   },
   "devDependencies": {
     "eslint": "^6.6.0"
