@@ -3,24 +3,21 @@
   "description": "José Carneiro's personal website",
   "author": "José Maria Carneiro",
   "homepage": "https://josecarnei.ro",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/josecarneiro/josecarnei.ro.git"
   },
-  "workspaces": [
-    "client"
-  ],
   "scripts": {
-    "build": "yarn install --production=false && vue-cli-service build",
     "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
   },
   "engines": {
-    "node": ">=12.6.0",
-    "yarn": ">=1.17.3"
+    "node": ">=12.18.0",
+    "npm": ">=6.14.0"
   },
   "dependencies": {
     "core-js": "^3.3.2",
