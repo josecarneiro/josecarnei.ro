@@ -25,17 +25,17 @@
       message: 'Server Error :/'
     }
   };
-  
+
   export default {
     props: {
-      status: [ String, Number ]
+      status: [String, Number]
     },
     computed: {
-      error () {
+      error() {
         const status = this.status.toString();
         const error = errorMap[status];
         return {
-          ...error ? { status, ...error } : errorMap[0]
+          ...(error ? { status, ...error } : errorMap[0])
         };
       }
     }

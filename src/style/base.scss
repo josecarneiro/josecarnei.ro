@@ -1,8 +1,8 @@
-@import "variables";
-@import "mixins";
-@import "reset";
-@import "general";
-@import "typography";
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'general';
+@import 'typography';
 // @import "code";
 
 a {
@@ -23,12 +23,12 @@ ul {
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 2em;
-  @include media("medium") {
+  @include media('medium') {
     flex-direction: row;
   }
   li {
     margin-bottom: (1.75 / 2) * 1em;
-    @include media("medium") {
+    @include media('medium') {
       margin-right: 1em;
     }
   }
@@ -41,7 +41,7 @@ ul {
   align-items: center;
   border: 0 solid $white;
   overflow: hidden;
-  @include media("extra-small") {
+  @include media('extra-small') {
     border-width: 1em;
   }
 }
@@ -51,7 +51,7 @@ ul {
   max-width: 80rem;
   padding: 0 1em;
   margin: 0 auto;
-  @include media("medium") {
+  @include media('medium') {
     padding: 0 2em;
   }
 }
