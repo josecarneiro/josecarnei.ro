@@ -10,7 +10,7 @@ const metaData = {
 };
 
 module.exports = {
-  outputDir: './../dist',
+  outputDir: './dist',
   lintOnSave: false,
   chainWebpack: config => {
     config.plugin('html').tap(args => {
