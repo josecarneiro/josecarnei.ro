@@ -1,9 +1,27 @@
-@import 'variables';
-@import 'mixins';
-@import 'reset';
-@import 'general';
-@import 'typography';
-// @import "code";
+html,
+body,
+body > div,
+.full-height {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  background-color: $white;
+}
+
+body {
+  font-family: $font-body;
+  font-weight: 300;
+  line-height: 1.75em;
+  color: $page-color;
+  background-color: $page-background;
+}
+
+@include selection {
+  color: $white;
+  background: $selection-color;
+}
 
 a {
   display: inline-block;
@@ -31,27 +49,5 @@ ul {
     @include media('medium') {
       margin-right: 1em;
     }
-  }
-}
-
-// STRUCTURAL
-
-.full-height {
-  display: flex;
-  align-items: center;
-  border: 0 solid $white;
-  overflow: hidden;
-  @include media('extra-small') {
-    border-width: 1em;
-  }
-}
-
-.container {
-  width: 100%;
-  max-width: 80rem;
-  padding: 0 1em;
-  margin: 0 auto;
-  @include media('medium') {
-    padding: 0 2em;
   }
 }

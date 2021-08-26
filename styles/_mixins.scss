@@ -1,5 +1,3 @@
-// MIXINS
-
 @mixin media($size) {
   $sizes: (
     'extra-small': 20em,
@@ -13,5 +11,11 @@
     @media (min-width: #{map-get($sizes, $size)}) {
       @content;
     }
+  }
+}
+
+@mixin selection {
+  ::selection {
+    @content;
   }
 }
