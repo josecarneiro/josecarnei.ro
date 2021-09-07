@@ -1,0 +1,11 @@
+'use strict';
+
+module.exports = [
+  {
+    title: 'Google Mobile Web Specialist',
+    issuer: 'Google Developers Certification Program',
+    description:
+      'Issued to advanced-level mobile web developers, who are capable of writing performant and responsive applications for the mobile web. Certifies the proficiency in developing with modern technologies.',
+    date: { year: 2020, month: 'January' }
+  }
+];

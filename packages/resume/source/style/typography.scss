@@ -1,0 +1,85 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // line-height: 1;
+  font-family: $font-heading;
+}
+
+h2,
+h3,
+h4
+{
+  // margin-bottom: 0.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h2,
+h3
+{
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.75em;
+  margin-bottom: 0.5rem;
+  // margin-top: -0.2em;
+  line-height: 0.875;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1.125em;
+}
+
+ul {
+  li {
+    // margin-left: 0.5em;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 0.5em;
+      height: 0.5em;
+      margin-right: 0.5em;
+      margin-bottom: 0.05em;
+      background-color: $grey-darkest;
+    }
+  }
+}
+
+small {
+  font-size: 0.875em;
+}
+
+sup,
+sub {
+  font-size: 0.75em;
+}
+
+em {
+  font-weight: 700;
+  color: $grey-dark;
+}
+
+strong {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+b {
+  font-weight: 700;
+}

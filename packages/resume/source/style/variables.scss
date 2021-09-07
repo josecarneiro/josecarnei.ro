@@ -1,0 +1,27 @@
+// VARIABLES
+$white: #fff;
+$grey-light: #f3f3f3;
+$grey-dark: #444;
+$grey-darkest: #333;
+$black: #000;
+
+$ease-cubic: cubic-bezier(0.55, 0, 0.5, 0.75);
+$speed-medium: 0.3s;
+
+$tablet: 929px;
+
+$font-monospace: 'Inconsolata', monospace;
+// $font-monospace: 'Roboto Mono', monospace;
+
+$font-body: $font-monospace;
+$font-heading: $font-monospace;
+
+$page-background-color: $grey-light;
+
+// $unit: 0.24 * 16px;
+
+// $page-width: 210 * $unit;
+// $page-height: 297.1 * $unit;
+// $page-padding: 16 * $unit;
+
+$page-width: 700px;

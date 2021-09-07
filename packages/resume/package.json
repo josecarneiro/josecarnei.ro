@@ -1,0 +1,22 @@
+{
+  "name": "jose-carneiro-curriculum-vitae",
+  "version": "2.0.0",
+  "description": "My personal Curriculum Vitae",
+  "scripts": {
+    "dev": "parcel source/views/index.pug --no-source-maps --open --no-cache 'google chrome'",
+    "build": "parcel build source/views/index.pug --no-source-maps --no-cache --public-url /dist",
+    "render": "node render",
+    "build:render": "npm run build && npm run render"
+  },
+  "dependencies": {
+    "mkdirp-promise": "^5.0.1",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-inliner": "^1.0.10",
+    "puppeteer": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "pug": "^2.0.4",
+    "sass": "^1.23.7"
+  }
+}
