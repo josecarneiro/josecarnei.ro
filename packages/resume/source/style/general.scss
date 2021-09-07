@@ -1,0 +1,53 @@
+@page {
+  margin: 2.5em 2.5em;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 0.875em;
+  // background-color: $page-background-color;
+  @media screen {
+    padding: 2em 2.5em;
+  }
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  font-family: $font-body;
+  line-height: 1.5;
+  color: $grey-darkest;
+}
+
+main {
+  max-width: $page-width;
+  margin: 0 auto;
+}
+
+header {
+  span {
+    display: inline-block;
+    margin-right: 0.5em;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+main {
+  & > section,
+  & > header,
+  & > footer {
+    // margin-bottom: 1em;
+    page-break-inside: avoid;
+    // &:last-child {
+    //   margin-bottom: 0;
+    // }
+  }
+}
