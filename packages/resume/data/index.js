@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = {
-  // title: 'José Maria Carneiro - Curriculum Vitae',
   title: 'jose-carneiro-curriculum-vitae',
   about: require('./about'),
   education: require('./education'),
