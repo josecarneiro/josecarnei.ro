@@ -1,6 +1,6 @@
 [build]
   publish = "dist/"
-  command = "npm run build && npm run deploy"
+  command = "npm run bootstrap && npm run build && npm run deploy"
 
 [[redirects]]
   from = "/curriculum-vitae"

@@ -2,7 +2,7 @@
   "name": "@josecarneiro/root",
   "private": true,
   "scripts": {
-    "prepare": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "deploy": "rm -rf dist && cp -R packages/app/out dist && cp packages/resume/dist/jose-carneiro-curriculum-vitae.pdf dist/curriculum-vitae.pdf"
   },
