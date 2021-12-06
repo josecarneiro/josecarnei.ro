@@ -1,0 +1,21 @@
+{
+  "name": "@josecarneiro/app",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "10.1.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "autoprefixer": "^10.2.5",
+    "sass": "^1.32.11",
+    "typescript": "^4.2.4"
+  }
+}

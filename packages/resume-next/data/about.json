@@ -1,0 +1,25 @@
+{
+  "name": {
+    "first": "José Maria",
+    "last": "Carneiro",
+    "full": "José Maria Pinheiro Rego Gonçalves Carneiro"
+  },
+  "birthDate": {
+    "day": 13,
+    "month": "May",
+    "year": 1993
+  },
+  "location": {
+    "country": "Portugal",
+    "city": "Lisboa"
+  },
+  "contact": {
+    "email": "hello@josecarnei.ro",
+    "website": "josecarnei.ro",
+    "social": {
+      "linkedin": "josemcarneiro",
+      "github": "josecarneiro"
+    }
+  },
+  "nationality": "Portuguese"
+}
