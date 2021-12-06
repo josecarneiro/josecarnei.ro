@@ -3,13 +3,14 @@
 const { join } = require('path');
 const render = require('./tools/render');
 
-const localPath = join(__dirname, 'dist', 'index.html');
+const distPath = join(__dirname, 'dist');
+const localPath = join(distPath, 'index.html');
 
 const run = async () => {
   try {
     await render({
       url: `file://${localPath}`,
-      destination: join(__dirname, 'dist')
+      destination: distPath
     });
     process.exit(0);
   } catch (error) {
