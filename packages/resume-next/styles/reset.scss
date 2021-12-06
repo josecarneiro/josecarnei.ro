@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -154,11 +154,11 @@ select {
   vertical-align: middle;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   vertical-align: text-bottom;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   vertical-align: bottom;
 }
 
@@ -175,7 +175,7 @@ abbr,
 acronym {
   cursor: help;
   text-decoration: none;
-  border-bottom: .1em dotted;
+  border-bottom: 0.1em dotted;
 }
 
 a:active,
@@ -188,12 +188,12 @@ input {
 }
 
 label,
-input[type="file"],
+input[type='file'],
 button,
-[type="button"],
-[type="reset"],
-[type="submit"],
-[role="button"] {
+[type='button'],
+[type='reset'],
+[type='submit'],
+[role='button'] {
   cursor: pointer;
 }
 

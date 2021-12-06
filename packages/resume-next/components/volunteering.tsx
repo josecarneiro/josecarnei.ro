@@ -1,11 +1,17 @@
 import { FunctionComponent } from 'react';
+import { Volunteering } from '../resume-types';
 
-interface ResumeAboutProps {}
+interface ResumeVolunteeringProps {
+  volunteering: Volunteering;
+}
 
-const ResumeAbout: FunctionComponent<ResumeAboutProps> = () => (
-  <>
-    <h1>Hello</h1>
-  </>
+const ResumeVolunteering: FunctionComponent<ResumeVolunteeringProps> = ({
+  volunteering
+}) => (
+  <section className="resume__section resume__section--volunteering">
+    <h2>Volunteering</h2>
+    <span>{volunteering.join(' | ')}</span>
+  </section>
 );
 
-export default ResumeAbout;
+export default ResumeVolunteering;

@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
 import Anchor from '../components/anchor';
-import socialLinks from './../config/social';
+import socialLinks from '../config/social';
 
 const HomePage: FunctionComponent = () => (
   <>

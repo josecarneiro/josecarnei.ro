@@ -1,33 +1,13 @@
 import { FunctionComponent } from 'react';
+import { About } from '../resume-types';
 
-interface ResumeAbout {
-  name: {
-    first: string;
-    last: string;
-  };
-  birthDate: {
-    day: number;
-    month: string;
-    year: number;
-  };
-  nationality: string;
-  location: {
-    city: string;
-    country: string;
-  };
-  contact: {
-    email: string;
-    website: string;
-    social: {
-      github: string;
-      linkedin: string;
-    };
-  };
+interface ResumeAboutProps {
+  about: About;
 }
 
-type ResumeAboutProps = ResumeAbout;
-
-const ResumeAbout: FunctionComponent<ResumeAboutProps> = (about) => (
+const ResumeAbout: FunctionComponent<ResumeAboutProps> = ({
+  about: { contact, ...about }
+}) => (
   <header className="resume__section resume__section--about">
     <h1>
       {about.name.first} {about.name.last}
@@ -41,21 +21,28 @@ const ResumeAbout: FunctionComponent<ResumeAboutProps> = (about) => (
       <span>
         <strong>Nationality</strong> {about.nationality}
       </span>
-
       <span>
-        <strong>Address</strong> {about.location.city}, {about.location.country}
+        <strong>Location</strong> {about.location.city},{' '}
+        {about.location.country}
       </span>
       <span>
-        <strong>Email</strong> {about.contact.email}
+        <strong>Email</strong>{' '}
+        <a href={`mailto:${contact.email}`}>{contact.email}</a>
       </span>
       <span>
-        <strong>Website</strong> {about.contact.website}
+        <strong>Website</strong> <a href={contact.website}>{contact.website}</a>
       </span>
       <span>
-        <strong>LinkedIn</strong> {about.contact.social.linkedin}
+        <strong>LinkedIn</strong>{' '}
+        <a href={`https://linkedin.com/${contact.social.linkedin}`}>
+          {contact.social.linkedin}
+        </a>
       </span>
       <span>
-        <strong>Github</strong> {about.contact.social.github}
+        <strong>Github</strong>{' '}
+        <a href={`https://linkedin.com/${contact.social.github}`}>
+          {contact.social.github}
+        </a>
       </span>
     </div>
   </header>
