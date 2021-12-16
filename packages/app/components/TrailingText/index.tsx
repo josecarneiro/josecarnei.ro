@@ -20,6 +20,7 @@ const TrailingText: FunctionComponent<TrailingTextProps> = ({
         <span
           key={index}
           className={classNames(!index && 'first')}
+          hidden={!!index}
           aria-hidden={!!index}
         >
           {value}

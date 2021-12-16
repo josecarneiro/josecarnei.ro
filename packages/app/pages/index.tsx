@@ -19,7 +19,7 @@ const HomePage = () => (
       <div className="content">
         <TrailingText value={name} count={10} />
         <p>
-          Hello World! My name is José, you can call me Zé.
+          Hello World! My name is José, but you can call me Zé.
           <br />
           I'm a full-stack developer based in Lisbon, Portugal.
           <br />I work at{' '}
@@ -29,8 +29,8 @@ const HomePage = () => (
           and teach at{' '}
           <ExternalLink to="https://ironhack.com/">Ironhack</ExternalLink>.
           <br />
-          I enjoy building fun experiments using TypeScript, React.js, Three.js,
-          CSS and Node.js.
+          I enjoy building fun experiments using TypeScript, React, Vue.js,
+          Three.js, CSS and Node.js.
           <br />
           You can reach out to me at{' '}
           <ExternalLink to={`mailto:${SOCIAL_LINKS.email}`}>
