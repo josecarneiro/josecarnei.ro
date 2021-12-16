@@ -1,8 +1,13 @@
 $font-family-base: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$font-family-monospace-base: Monaco, Andale Mono, monospace;
+
 $font-family: 'Roboto Mono', $font-family-base;
 
-$rainbow-colors: white, #feaf7e, #f35b8f, #a161fc, #628dff, #6ff1dd;
+$rainbow-colors: white, #feaf7e, #f35b8f, #a161fc, #628dff, #6ff1dd, #68ff96;
+$rainbow-colors: #ffe679, #feaf7e, #ff4888, #9e59ff, #5985ff, #71ffea;
+$rainbow-colors: #ffe679, #feaf7e, #ff4888, #9e59ff, #5985ff, #71ffea, #68ffa7;
+// $rainbow-colors: #ffe679, #feaf7e, #ff4888, #9e59ff, #5985ff, #68ff96;
 $sky-colors: #000819, #000832, #001031;
 
 // $body-font-size: 1.75em;

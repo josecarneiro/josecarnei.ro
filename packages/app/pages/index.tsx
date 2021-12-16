@@ -16,7 +16,7 @@ const HomePage = () => (
       <meta name="description" content={name} />
     </Head>
     <div className={styles.App}>
-      <div className="Content">
+      <div className="content">
         <TrailingText value={name} count={10} />
         <p>
           Hello World! My name is José, you can call me Zé.
@@ -32,13 +32,11 @@ const HomePage = () => (
           I enjoy building fun experiments using TypeScript, React.js, Three.js,
           CSS and Node.js.
           <br />
-          Reach out to me at{' '}
+          You can reach out to me at{' '}
           <ExternalLink to={`mailto:${SOCIAL_LINKS.email}`}>
             {SOCIAL_LINKS.email}
-          </ExternalLink>
-          .
-          <br />
-          Follow me on{' '}
+          </ExternalLink>{' '}
+          and follow me on{' '}
           <ExternalLink to={SOCIAL_LINKS.linkedIn}>LinkedIn</ExternalLink>,{' '}
           <ExternalLink to={SOCIAL_LINKS.gitHub}>GitHub</ExternalLink>,{' '}
           <ExternalLink to={SOCIAL_LINKS.twitter}>Twitter</ExternalLink> or{' '}
