@@ -16,7 +16,7 @@ const HomePage = () => (
       <meta name="description" content={name} />
     </Head>
     <div className={styles.App}>
-      <div className={styles.Content}>
+      <div className="Content">
         <TrailingText value={name} count={10} />
         <p>
           Hello World! My name is José, you can call me Zé.

@@ -14,3 +14,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@mixin screen {
+  @media (min-width: 30em) {
+    @content;
+  }
+}

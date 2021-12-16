@@ -8,7 +8,7 @@ $sky-colors: #000819, #000832, #001031;
 // $body-font-size: 1.75em;
 // $body-font-size: 1.5em;
 $body-desired-font-size: 2.25vmin;
-$body-font-size: clamp(0.5em, #{$body-desired-font-size}, 8em);
+$body-font-size: clamp(0.875em, #{$body-desired-font-size}, 8em);
 $body-line-height: 2;
 $heading-line-height: 1.125;
 $heading-font-size: 6.75em;

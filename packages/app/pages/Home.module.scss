@@ -26,6 +26,9 @@ $dot-space: 1rem;
   $background-overlay: linear-gradient(135deg, $rainbow-colors);
   $background-gradient: linear-gradient(135deg, $sky-colors);
   @include dot-background($background-overlay, $background-gradient);
+  h1 {
+    font-size: clamp(1em, 18vw, #{$heading-font-size});
+  }
   p {
     $text-gradient: linear-gradient(135deg, $rainbow-colors);
     @include text-gradient($text-gradient);
