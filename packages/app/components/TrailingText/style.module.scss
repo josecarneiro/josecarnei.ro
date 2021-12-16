@@ -1,0 +1,41 @@
+@import '../../styles/utilities';
+
+$text-gradient: linear-gradient(135deg, $rainbow-colors);
+
+$trailing-levels: 10;
+$trailing-distance: 0.0625em;
+$trail-border-color: hsl(220, 100%, 10%);
+
+.Title {
+  position: relative;
+  transform-origin: top center;
+  // padding-top: $trailing-levels * $trailing-distance -
+  //   ($heading-line-height - 1);
+  span {
+    color: transparent;
+    display: inline-block;
+    &:first-child {
+      @include text-gradient($text-gradient);
+      z-index: 1;
+    }
+    &:not(:first-child) {
+      @include outline-text();
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      @include no-select;
+      pointer-events: none;
+      color: $trail-border-color;
+      @for $i from 1 through $trailing-levels + 1 {
+        &:nth-child(#{$i + 1}) {
+          transform: translate(
+            $trailing-distance * $i,
+            -$trailing-distance * $i
+          );
+          opacity: 1 - ($i / $trailing-levels);
+        }
+      }
+    }
+  }
+}

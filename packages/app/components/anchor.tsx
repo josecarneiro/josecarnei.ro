@@ -1,14 +1,17 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, ReactHTMLElement } from 'react';
 
-interface AnchorElementProps {
-  url: string;
-  value: string;
+interface ExternalLinkProps
+  extends Partial<Omit<ReactHTMLElement<HTMLAnchorElement>, 'href'>> {
+  to: string;
 }
 
-const Anchor: FunctionComponent<AnchorElementProps> = ({ url, value }) => (
-  <a href={url} target="_blank" rel="noopener noreferrer">
-    {value}
+const ExternalLink: FunctionComponent<ExternalLinkProps> = ({
+  to,
+  children
+}) => (
+  <a href={to} target="_blank" rel="noopener noreferrer">
+    {children}
   </a>
 );
 
-export default Anchor;
+export default ExternalLink;

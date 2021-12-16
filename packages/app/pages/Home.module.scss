@@ -1,0 +1,46 @@
+@import '../styles/utilities';
+
+$skew: 1;
+$dot-size: 1px;
+$dot-space: 1rem;
+
+@mixin dot-background($background-overlay, $background: transparent) {
+  background: $background-overlay,
+    radial-gradient(white $dot-size, rgba(0, 0, 0, 0) 0), $background;
+  background-blend-mode: darken, normal;
+  background-size: 100% 100%, $dot-space * 2 $dot-space * 2;
+}
+
+.App {
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  $vertical-difference: 0.5;
+  $horizontal-difference: 0.5;
+  height: 100% * (1 + $vertical-difference);
+  margin: 0 -$horizontal-difference * 100%;
+  transform: rotateX($skew * 5deg) rotateY($skew * 20deg) skewY($skew * 10deg);
+  $background-overlay: linear-gradient(135deg, $rainbow-colors);
+  $background-gradient: linear-gradient(135deg, $sky-colors);
+  @include dot-background($background-overlay, $background-gradient);
+  p {
+    $text-gradient: linear-gradient(135deg, $rainbow-colors);
+    @include text-gradient($text-gradient);
+    a {
+      -webkit-text-fill-color: white;
+      opacity: 0.85;
+      transition: 0.25s ease opacity;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.Content {
+  max-width: $container-width;
+  padding: 0 1em;
+}

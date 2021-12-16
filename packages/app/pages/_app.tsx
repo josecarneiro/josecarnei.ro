@@ -1,7 +1,10 @@
+import { FunctionComponent } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
-import { FunctionComponent } from 'react';
-import '../styles/base.scss';
+import '../styles/global.scss';
+
+// const FONT_BEHAVIOR = 'optional';
+const FONT_BEHAVIOR = 'swap';
 
 const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
   <>
@@ -9,10 +12,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
       <title>José Carneiro</title>
       {/* <meta charset="utf-8" /> */}
       <meta name="description" content="José Carneiro" />
-      <meta
-        name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=5"
-      />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index,follow,noodp" />
       <meta name="googlebot" content="index,follow" />
       <link rel="icon" href="/favicon.ico" />
@@ -20,10 +20,12 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
         name="theme-color"
         content="<%= htmlWebpackPlugin.options.data.meta.pwa.themeColor %>"
       />
+      {/* <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin> */}
       <link
-        href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap"
+        href={`https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=${FONT_BEHAVIOR}`}
         rel="stylesheet"
-      />
+      ></link>
     </Head>
     <Component {...pageProps} />
   </>

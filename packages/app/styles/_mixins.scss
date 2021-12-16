@@ -1,21 +1,16 @@
-@mixin media($size) {
-  $sizes: (
-    'extra-small': 20em,
-    'small': 30em,
-    'medium': 40em,
-    'large': 60em,
-    'extra-large': 80em,
-    'extra-extra-large': 120em
-  );
-  @if map-has-key($sizes, $size) {
-    @media (min-width: #{map-get($sizes, $size)}) {
-      @content;
-    }
-  }
+@mixin no-select {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-@mixin selection {
-  ::selection {
-    @content;
-  }
+@mixin outline-text($size: 0.75px, $color: white) {
+  -webkit-text-stroke-width: $size;
+  -webkit-text-stroke-color: $color;
+}
+
+@mixin text-gradient($background) {
+  background: $background;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

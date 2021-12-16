@@ -1,18 +1,16 @@
-$white: white;
-$grey-lightest: #f3f3f3;
-$grey: #b9b9b9;
-$grey-dark: #555;
-$black: #111;
+$font-family-base: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$font-family: 'Roboto Mono', $font-family-base;
 
-$blue: #0015ff;
+$rainbow-colors: white, #feaf7e, #f35b8f, #a161fc, #628dff, #6ff1dd;
+$sky-colors: #000819, #000832, #001031;
 
-$ease-cubic: cubic-bezier(0.55, 0, 0.5, 0.75);
-$speed-medium: 0.3s;
+// $body-font-size: 1.75em;
+// $body-font-size: 1.5em;
+$body-desired-font-size: 2.25vmin;
+$body-font-size: clamp(0.5em, #{$body-desired-font-size}, 8em);
+$body-line-height: 2;
+$heading-line-height: 1.125;
+$heading-font-size: 6.75em;
 
-$page-background: $grey-lightest;
-$page-color: $black;
-$anchor-color: $grey-dark;
-$anchor-color: $grey-dark;
-$selection-color: $grey;
-
-$font-body: 'Roboto Mono', monospace;
+$container-width: 34em;
