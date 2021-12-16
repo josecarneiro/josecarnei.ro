@@ -5,8 +5,9 @@ $dot-size: 1px;
 $dot-space: 1rem;
 
 @mixin dot-background($background-overlay, $background: transparent) {
+  $transparent: rgba(0, 0, 0, 0);
   background: $background-overlay,
-    radial-gradient(white $dot-size, rgba(0, 0, 0, 0) 0), $background;
+    radial-gradient(white $dot-size, $transparent 0), $background;
   background-blend-mode: darken, normal;
   background-size: 100% 100%, $dot-space * 2 $dot-space * 2;
 }

@@ -4,7 +4,10 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "deploy": "rm -rf dist && cp -R packages/app/out dist && cp packages/resume/dist/jose-carneiro-curriculum-vitae.pdf dist/curriculum-vitae.pdf"
+    "deploy:clean": "rm -rf dist",
+    "deploy:app": "cp -R packages/app/out dist",
+    "deploy:resume": "cp packages/resume/dist/jose-carneiro-curriculum-vitae.pdf dist/curriculum-vitae.pdf",
+    "deploy": "npm run deploy:clean && npm run deploy:app"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
