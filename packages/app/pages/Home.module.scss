@@ -12,6 +12,20 @@ $dot-space: 1rem;
   background-size: 100% 100%, $dot-space * 2 $dot-space * 2;
 }
 
+%AppSkew {
+  $vertical-difference: 0.5;
+  $horizontal-difference: 0.5;
+  height: 100% * (1 + $vertical-difference);
+  margin: 0 -$horizontal-difference * 100%;
+  transform: rotateX($skew * 5deg) rotateY($skew * 20deg) skewY($skew * 10deg);
+}
+
+%AppBackground {
+  $background-overlay: linear-gradient(135deg, $rainbow-colors);
+  $background-gradient: linear-gradient(135deg, $sky-colors);
+  @include dot-background($background-overlay, $background-gradient);
+}
+
 .App {
   z-index: 1;
   flex: 1;
@@ -19,14 +33,8 @@ $dot-space: 1rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  $vertical-difference: 0.5;
-  $horizontal-difference: 0.5;
-  height: 100% * (1 + $vertical-difference);
-  margin: 0 -$horizontal-difference * 100%;
-  transform: rotateX($skew * 5deg) rotateY($skew * 20deg) skewY($skew * 10deg);
-  $background-overlay: linear-gradient(135deg, $rainbow-colors);
-  $background-gradient: linear-gradient(135deg, $sky-colors);
-  @include dot-background($background-overlay, $background-gradient);
+  @extend %AppSkew;
+  @extend %AppBackground;
   h1 {
     font-size: clamp(1em, 18vw, #{$heading-font-size});
   }
