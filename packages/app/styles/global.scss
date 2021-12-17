@@ -63,3 +63,9 @@ a {
   max-width: 100vw;
   padding: 0 1em;
 }
+
+:root {
+  $background-overlay: linear-gradient(135deg, $rainbow-colors);
+  $background-gradient: linear-gradient(135deg, $sky-colors);
+  --app-background: #{$background-gradient};
+}

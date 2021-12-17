@@ -4,12 +4,17 @@ $skew: 1;
 $dot-size: 1px;
 $dot-space: 1rem;
 
-@mixin dot-background($background-overlay, $background: transparent) {
+@mixin dot-background(
+  $background-overlay,
+  $background,
+  $blend-mode: darken,
+  $dot-color: black
+) {
   $transparent: rgba(0, 0, 0, 0);
   background: $background-overlay,
-    radial-gradient(white $dot-size, $transparent 0), $background;
-  background-blend-mode: darken, normal;
-  background-size: 100% 100%, $dot-space * 2 $dot-space * 2;
+    radial-gradient($dot-color $dot-size, $transparent 0), $background;
+  background-blend-mode: $blend-mode, normal, normal;
+  background-size: 100% 100%, $dot-space * 2 $dot-space * 2, 100% 100%;
 }
 
 %AppSkew {
@@ -20,13 +25,59 @@ $dot-space: 1rem;
   transform: rotateX($skew * 5deg) rotateY($skew * 20deg) skewY($skew * 10deg);
 }
 
-%AppBackground {
-  $background-overlay: linear-gradient(135deg, $rainbow-colors);
-  $background-gradient: linear-gradient(135deg, $sky-colors);
-  @include dot-background($background-overlay, $background-gradient);
-}
+$gray-light: hsl(0, 0%, 90%);
+$gray-dark: hsl(0, 0%, 30%);
 
 .App {
+  --app-background-color: white;
+  --app-text-color: black;
+  --app-trailing-text-color: var(--app-background-color);
+  // --app-trailing-text-outline-color: var(--app-text-color);
+  --app-trailing-text-outline-color: #{$gray-dark};
+  --app-anchor-tag-color: var(--app-text-color);
+
+  --app-background-overlay: linear-gradient(transparent, transparent);
+  --app-background: linear-gradient(white, white);
+  --app-background-blend-mode: darken;
+  --app-background-dot-color: black;
+
+  &.dark {
+    --app-text-color: white;
+    --app-trailing-text-outline-color: #{$gray-light};
+    --app-background-color: black;
+    --app-background: linear-gradient(black, black);
+    --app-background-blend-mode: lighten;
+    --app-background-dot-color: white;
+  }
+  &.colorful {
+    --app-background-overlay: linear-gradient(135deg, #{$rainbow-colors});
+    --app-background-blend-mode: lighten;
+    --app-trailing-featured-text-color: transparent;
+    --app-trailing-featured-text-background: linear-gradient(
+      135deg,
+      #{$rainbow-colors}
+    );
+    &.dark {
+      --app-background-color: #{$blue-sky-dark};
+      --app-background-blend-mode: darken;
+      --app-background: linear-gradient(135deg, #{$sky-colors});
+    }
+  }
+  @include dot-background(
+    var(--app-background-overlay),
+    var(--app-background),
+    var(--app-background-blend-mode),
+    var(--app-background-dot-color)
+  );
+  h1 span:first-child,
+  p {
+    background: var(--app-trailing-featured-text-background);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--app-trailing-featured-text-color);
+  }
+  background-color: var(--app-background-color);
+  color: var(--app-text-color);
   z-index: 1;
   flex: 1;
   display: flex;
@@ -34,19 +85,29 @@ $dot-space: 1rem;
   align-items: center;
   justify-content: center;
   @extend %AppSkew;
-  @extend %AppBackground;
   h1 {
     font-size: clamp(1em, 18vw, #{$heading-font-size});
   }
   p {
-    $text-gradient: linear-gradient(135deg, $rainbow-colors);
-    @include text-gradient($text-gradient);
+    // $text-gradient: linear-gradient(135deg, $rainbow-colors);
+    // @include text-gradient($text-gradient);
     a {
-      -webkit-text-fill-color: white;
+      -webkit-text-fill-color: var(--app-anchor-tag-color);
+      // -webkit-text-fill-color: white;
       opacity: 0.85;
       transition: 0.25s ease opacity;
       &:hover {
         opacity: 1;
+      }
+    }
+    br {
+      display: inline;
+      content: ' ';
+      padding-right: 1ch;
+      @include screen {
+        display: initial;
+        content: initial;
+        padding-right: initial;
       }
     }
   }
