@@ -26,58 +26,64 @@ $dot-space: 1rem;
 }
 
 $gray-light: hsl(0, 0%, 90%);
+$gray: hsl(0, 0%, 60%);
 $gray-dark: hsl(0, 0%, 30%);
 
 .App {
-  --app-background-color: white;
-  --app-text-color: black;
-  --app-trailing-text-color: var(--app-background-color);
-  // --app-trailing-text-outline-color: var(--app-text-color);
-  --app-trailing-text-outline-color: #{$gray-dark};
-  --app-anchor-tag-color: var(--app-text-color);
+  --background-color: white;
+  --text-color: black;
+  --trailing-text-color: var(--background-color);
+  // --trailing-text-outline-color: var(--text-color);
+  // --trailing-text-outline-color: #{$gray-dark};
+  --trailing-text-outline-color: #{$gray-dark};
+  --anchor-tag-color: var(--text-color);
 
-  --app-background-overlay: linear-gradient(transparent, transparent);
-  --app-background: linear-gradient(white, white);
-  --app-background-blend-mode: darken;
-  --app-background-dot-color: black;
+  --background-overlay: linear-gradient(transparent, transparent);
+  --background: linear-gradient(white, white);
+  --background-blend-mode: darken;
+  --background-dot-color: black;
+  --background-dot-color: hsl(0, 0%, 20%);
 
   &.dark {
-    --app-text-color: white;
-    --app-trailing-text-outline-color: #{$gray-light};
-    --app-background-color: black;
-    --app-background: linear-gradient(black, black);
-    --app-background-blend-mode: lighten;
-    --app-background-dot-color: white;
+    --text-color: white;
+    // --trailing-text-outline-color: #{$gray-light};
+    --trailing-text-outline-color: hsla(0, 100%, 100%, 0.8);
+    --background-color: black;
+    --background: linear-gradient(black, black);
+    --background-blend-mode: lighten;
+    --background-dot-color: white;
   }
   &.colorful {
-    --app-background-overlay: linear-gradient(135deg, #{$rainbow-colors});
-    --app-background-blend-mode: lighten;
-    --app-trailing-featured-text-color: transparent;
-    --app-trailing-featured-text-background: linear-gradient(
+    --background-dot-color: black;
+    --background-overlay: linear-gradient(135deg, #{$rainbow-colors});
+    --background-blend-mode: lighten;
+    --trailing-featured-text-color: transparent;
+    --trailing-featured-text-background: linear-gradient(
       135deg,
       #{$rainbow-colors}
     );
     &.dark {
-      --app-background-color: #{$blue-sky-dark};
-      --app-background-blend-mode: darken;
-      --app-background: linear-gradient(135deg, #{$sky-colors});
+      --background-dot-color: white;
+      --background-color: #{$blue-sky-dark};
+      --background-blend-mode: darken;
+      --background: linear-gradient(135deg, #{$sky-colors});
     }
   }
   @include dot-background(
-    var(--app-background-overlay),
-    var(--app-background),
-    var(--app-background-blend-mode),
-    var(--app-background-dot-color)
+    var(--background-overlay),
+    var(--background),
+    var(--background-blend-mode),
+    var(--background-dot-color)
   );
   h1 span:first-child,
   p {
-    background: var(--app-trailing-featured-text-background);
+    background: var(--trailing-featured-text-background);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: var(--app-trailing-featured-text-color);
+    -webkit-text-fill-color: var(--trailing-featured-text-color);
   }
-  background-color: var(--app-background-color);
-  color: var(--app-text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
   z-index: 1;
   flex: 1;
   display: flex;
@@ -92,7 +98,7 @@ $gray-dark: hsl(0, 0%, 30%);
     // $text-gradient: linear-gradient(135deg, $rainbow-colors);
     // @include text-gradient($text-gradient);
     a {
-      -webkit-text-fill-color: var(--app-anchor-tag-color);
+      -webkit-text-fill-color: var(--anchor-tag-color);
       // -webkit-text-fill-color: white;
       opacity: 0.85;
       transition: 0.25s ease opacity;

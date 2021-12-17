@@ -67,5 +67,5 @@ a {
 :root {
   $background-overlay: linear-gradient(135deg, $rainbow-colors);
   $background-gradient: linear-gradient(135deg, $sky-colors);
-  --app-background: #{$background-gradient};
+  --background: #{$background-gradient};
 }
