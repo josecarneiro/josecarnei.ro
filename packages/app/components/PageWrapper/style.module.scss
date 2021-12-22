@@ -1,0 +1,61 @@
+@import '../../styles/utilities';
+
+$dot-size: 1px;
+$dot-space: 1rem;
+$transparent: rgba(0, 0, 0, 0);
+
+%DottedBackground {
+  background-color: var(--background-color);
+  background: var(--background-overlay),
+    radial-gradient(var(--background-dot-color) $dot-size, $transparent 0),
+    var(--background);
+  background-blend-mode: var(--background-blend-mode), normal, normal;
+  background-size: 100% 100%, $dot-space * 2 $dot-space * 2, 100% 100%;
+}
+
+%AppSkew {
+  --angle: #{$page-skew-angle};
+  height: calc(100% + (var(--angle) * 2vw));
+  transform: skewY(calc(var(--angle) * 1deg));
+}
+
+.PageWrapper {
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  @extend %DottedBackground;
+  @extend %AppSkew;
+  &.Dark {
+    --text-color: white;
+    --anchor-tag-color: var(--text-color); /* Need to set this again */
+    --trailing-text-outline-color: hsla(0, 100%, 100%, 0.8);
+    --background-color: black;
+    --trailing-text-color: var(--background-color); /* Need to set this again */
+    --background: linear-gradient(black, black);
+    --background-blend-mode: lighten;
+    --background-dot-color: white;
+  }
+  &.Colorful {
+    --background-dot-color: black;
+    --background-overlay: linear-gradient(135deg, #{$rainbow-colors});
+    --background-blend-mode: lighten;
+    --trailing-featured-text-color: transparent;
+    --trailing-featured-text-background: linear-gradient(
+      135deg,
+      #{$rainbow-colors}
+    );
+    &.Dark {
+      --background-dot-color: white;
+      --background-blend-mode: darken;
+    }
+  }
+}
+
+.Content {
+  max-width: $container-width;
+  padding: 0 1em;
+}

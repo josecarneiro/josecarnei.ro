@@ -3,11 +3,6 @@
   user-select: none;
 }
 
-@mixin outline-text($size: 0.75px, $color: white) {
-  -webkit-text-stroke-width: $size;
-  -webkit-text-stroke-color: $color;
-}
-
 @mixin text-gradient($background) {
   background: $background;
   background-clip: text;
@@ -15,8 +10,18 @@
   -webkit-text-fill-color: transparent;
 }
 
-@mixin screen {
-  @media (min-width: 30em) {
+@mixin screen($size) {
+  $min-width: 50em;
+  @if ($size == small) {
+    $min-width: 20em;
+  }
+  @if ($size == medium) {
+    $min-width: 30em;
+  }
+  @if ($size == large) {
+    $min-width: 40em;
+  }
+  @media (min-width: $min-width) {
     @content;
   }
 }

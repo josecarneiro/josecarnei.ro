@@ -17,8 +17,6 @@ body {
   font-family: $font-family;
   font-size: $body-font-size;
   line-height: $body-line-height;
-  background: linear-gradient(135deg, $sky-colors);
-  color: white;
 }
 
 html,
@@ -33,6 +31,11 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 h1,
@@ -50,22 +53,38 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(1em, 18vw, #{$heading-font-size});
+  font-size: clamp(1em, 18vw, #{$title-font-size});
 }
 
-a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-.content {
-  width: $container-width;
-  max-width: 100vw;
-  padding: 0 1em;
+p {
+  a {
+    -webkit-text-fill-color: var(--anchor-tag-color);
+    opacity: 0.85;
+    transition: 0.25s ease opacity;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  br {
+    display: inline;
+    content: ' ';
+    padding-right: 1ch;
+    @include screen(medium) {
+      display: initial;
+      content: initial;
+      padding-right: initial;
+    }
+  }
 }
 
 :root {
-  $background-overlay: linear-gradient(135deg, $rainbow-colors);
-  $background-gradient: linear-gradient(135deg, $sky-colors);
-  --background: #{$background-gradient};
+  --background-color: white;
+  --background: linear-gradient(white, white);
+  --background-overlay: linear-gradient(transparent, transparent);
+  --background-blend-mode: darken;
+  --background-dot-color: hsl(0, 0%, 30%);
+  --text-color: black;
+  --trailing-text-color: var(--background-color);
+  --trailing-text-outline-color: hsl(0, 0%, 50%);
+  --anchor-tag-color: var(--text-color);
 }

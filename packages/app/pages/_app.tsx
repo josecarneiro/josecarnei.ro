@@ -2,6 +2,8 @@ import { FunctionComponent } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import '../styles/global.scss';
+import { ThemeProvider } from '../context/theme';
+import PageWrapper from '../components/PageWrapper';
 
 // const FONT_BEHAVIOR = 'optional';
 const FONT_BEHAVIOR = 'swap';
@@ -25,7 +27,11 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
         href={`https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=${FONT_BEHAVIOR}`}
       ></link>
     </Head>
-    <Component {...pageProps} />
+    <ThemeProvider>
+      <PageWrapper>
+        <Component {...pageProps} />
+      </PageWrapper>
+    </ThemeProvider>
   </>
 );
 

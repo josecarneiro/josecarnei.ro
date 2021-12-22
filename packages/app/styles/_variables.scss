@@ -1,6 +1,6 @@
-$font-family-base: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-$font-family-monospace-base: Monaco, Andale Mono, monospace;
+$font-family-base-generic: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$font-family-base: Monaco, Andale Mono, monospace, $font-family-base-generic;
 
 $font-family: 'Roboto Mono', $font-family-base;
 
@@ -12,20 +12,20 @@ $blue: #5985ff;
 $aqua: #71ffea;
 $green: #68ffa7;
 
-$blue-sky-dark: #001031;
-$blue-sky-darker: #000832;
-$blue-sky-darkest: #000819;
+// $blue-sky-dark: #001031;
+// $blue-sky-darker: #000832;
+// $blue-sky-darkest: #000819;
 
-// $rainbow-colors: white, #feaf7e, #f35b8f, #a161fc, #628dff, #6ff1dd, #68ff96;
-// $rainbow-colors: #ffe679, #feaf7e, #ff4888, #9e59ff, #5985ff, #68ff96;
 $rainbow-colors: $yellow, $orange, $red, $purple, $blue, $aqua;
 $rainbow-colors: $yellow, $orange, $red, $purple, $blue, $aqua, $green;
-$sky-colors: $blue-sky-darkest, $blue-sky-darker, $blue-sky-dark;
+// $sky-colors: $blue-sky-darkest, $blue-sky-darker, $blue-sky-dark;
 
 $body-desired-font-size: 2.25vmin;
 $body-font-size: clamp(0.875em, #{$body-desired-font-size}, 8em);
 $body-line-height: 2;
+
 $heading-line-height: 1.125;
-$heading-font-size: 6.75em;
+$title-font-size: 6.75em;
 
 $container-width: 34em;
+$page-skew-angle: 10;
