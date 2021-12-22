@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactHTMLElement } from 'react';
+import type { FunctionComponent, ReactHTMLElement } from 'react';
 
 export interface ExternalLinkProps
   extends Partial<Omit<ReactHTMLElement<HTMLAnchorElement>, 'href'>> {

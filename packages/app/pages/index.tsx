@@ -1,13 +1,11 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 import Head from 'next/head';
-import classNames from 'classnames';
-import useToggle from '../hooks/use-toggle';
+import { useTheme } from '../context/theme';
 import flipCoin from '../util/flip-coin';
 import TrailingText from './../components/TrailingText';
 import ExternalLink from '../components/ExternalLink';
 import * as LINKS from '../config/data';
 import styles from './Home.module.scss';
-import { useTheme } from '../context/theme';
 
 // Inspiration taken from
 // https://ionicframework.com/blog/wp-content/uploads/2021/12/ionic-6-feature-image-1.png
@@ -40,7 +38,7 @@ const HomePage = () => {
         <p>
           Hello World! My name is José, but you can call me Zé.
           <br />
-          I'm a full-stack developer based in Lisbon, Portugal.
+          I&apos;m a full-stack developer based in Lisbon, Portugal.
           <br />I work at{' '}
           <ExternalLink to="https://mercedes-benz.io/">
             Mercedes-Benz.io

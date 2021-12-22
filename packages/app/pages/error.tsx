@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
+import TrailingText from '../components/TrailingText';
 
 const ErrorPage: FunctionComponent = () => (
   <>
@@ -7,9 +8,9 @@ const ErrorPage: FunctionComponent = () => (
       <title>José Carneiro | Error</title>
       <meta name="description" content="José Carneiro | Error" />
     </Head>
-    <main>
-      <h1>There was an unknown error.</h1>
-    </main>
+    <div className="content">
+      <TrailingText value="There was an unknown error" count={10} />
+    </div>
   </>
 );
 

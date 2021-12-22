@@ -9,7 +9,7 @@ const ErrorPage: FunctionComponent = () => (
       <meta name="description" content="José Carneiro | Error" />
     </Head>
     <div className="content">
-      <TrailingText value="There was an unknown error." count={10} />
+      <TrailingText value="There was an unknown error" count={10} />
     </div>
   </>
 );

@@ -1,7 +1,6 @@
 import { FunctionComponent, HTMLAttributes, useMemo } from 'react';
-import classNames from 'classnames';
-import styles from './style.module.scss';
 import GenericElement, { GenericElementProps } from '../GenericElement';
+import styles from './style.module.scss';
 
 interface TrailingTextProps extends HTMLAttributes<HTMLElement> {
   value: string;
