@@ -31,7 +31,6 @@ $transparent: rgba(0, 0, 0, 0);
   @extend %AppSkew;
   &.Dark {
     --text-color: white;
-    --anchor-tag-color: var(--text-color); /* Need to set this again */
     --trailing-text-outline-color: hsla(0, 100%, 100%, 0.8);
     --background-color: black;
     --trailing-text-color: var(--background-color); /* Need to set this again */

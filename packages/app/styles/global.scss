@@ -58,7 +58,8 @@ h1 {
 
 p {
   a {
-    -webkit-text-fill-color: var(--anchor-tag-color);
+    -webkit-text-fill-color: initial;
+    color: var(--text-color);
     opacity: 0.85;
     transition: 0.25s ease opacity;
     &:hover {
@@ -86,5 +87,5 @@ p {
   --text-color: black;
   --trailing-text-color: var(--background-color);
   --trailing-text-outline-color: hsl(0, 0%, 50%);
-  --anchor-tag-color: var(--text-color);
+  // --anchor-tag-color: var(--text-color);
 }
