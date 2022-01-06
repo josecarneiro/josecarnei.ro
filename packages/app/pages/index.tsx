@@ -17,8 +17,9 @@ const HomePage = () => {
 
   const changePatterns = useCallback(() => {
     changeTheme({
-      ...(flipCoin(2 / 3) && { dark: !dark }),
-      ...(flipCoin(2 / 3) && { colorful: !colorful })
+      ...(flipCoin()
+        ? { colorful, dark: !dark }
+        : { colorful: !colorful, dark })
     });
   }, [changeTheme, dark, colorful]);
 
