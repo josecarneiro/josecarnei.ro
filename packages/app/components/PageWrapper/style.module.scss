@@ -17,7 +17,13 @@ $transparent: rgba(0, 0, 0, 0);
 .PageOuterWrapper {
   width: 100%;
   overflow: hidden;
-  --skew-angle-unitless: 10;
+  --skew-angle-unitless: 0;
+  @media screen {
+    // &:hover {
+    //   --skew-angle-unitless: 10;
+    // }
+    --skew-angle-unitless: 10;
+  }
   &.Dark {
     --text-color: white;
     --trailing-text-outline-color: hsla(0, 100%, 100%, 0.8);
@@ -70,6 +76,7 @@ $transparent: rgba(0, 0, 0, 0);
   margin: calc(-1 * var(--triangle-oposite-side)) 0;
   transform: skewY(calc(var(--skew-angle-unitless) * 1deg));
   color: var(--text-color);
+  // transition: transform 0.5s ease;
   @extend %DottedBackground;
 }
 

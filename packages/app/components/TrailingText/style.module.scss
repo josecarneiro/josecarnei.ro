@@ -1,9 +1,9 @@
 @use 'sass:math';
 @import '../../styles/utilities';
 
-$trail-levels: 10;
-$trail-distance: math.div(1, 16 * 1.25) * 1em;
-$trail-outline-width: 0.75px;
+// $trail-levels: 10;
+// $trail-distance: math.div(1, 16 * 1.25) * 1em;
+// $trail-outline-width: 0.75px;
 
 .Title {
   position: relative;
@@ -26,11 +26,17 @@ $trail-outline-width: 0.75px;
     opacity: 0;
     @include no-select;
     pointer-events: none;
+    // transition: transform 0.5s ease;
     @for $i from 1 through $trail-levels + 1 {
       &:nth-child(#{$i + 1}) {
         z-index: -$i;
         opacity: 1 - math.div($i, $trail-levels);
-        transform: translate($trail-distance * $i, -$trail-distance * $i);
+        // transform: translate($trail-distance * $i, -$trail-distance * $i);
+        $distance-multiplier: math.div($i, 1000) * 5 * 1em;
+        transform: translate(
+          calc(var(--skew-angle-unitless) * #{$distance-multiplier}),
+          calc(var(--skew-angle-unitless) * #{-1 * $distance-multiplier})
+        );
       }
     }
   }
