@@ -1,11 +1,53 @@
 @import '../styles/utilities';
 
 .HomePage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   h1 strong,
   p {
     background: var(--trailing-featured-text-background);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: var(--trailing-featured-text-color);
+  }
+}
+
+$aside-margin: 10em;
+
+.HomePageOverlayNavigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  font-size: 0.875em;
+  & > aside {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0.5em 0;
+    writing-mode: vertical-rl;
+    & > * {
+      display: block;
+      pointer-events: initial;
+      // transition: all 0.15s ease-in-out;
+      // &:not(:hover) {
+      //   opacity: 0.15;
+      //   opacity: 0.5;
+      // }
+    }
+    &:first-child {
+      margin-left: -$aside-margin;
+      transform: rotate(180deg);
+    }
+    &:last-child {
+      margin-right: -$aside-margin;
+    }
   }
 }

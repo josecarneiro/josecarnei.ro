@@ -1,7 +1,9 @@
-import { FunctionComponent, useMemo } from 'react';
+import { useMemo } from 'react';
 import classNames from 'classnames';
 import { useTheme } from '../../context/theme';
 import styles from './style.module.scss';
+
+import type { FunctionComponent } from 'react';
 
 const PageWrapper: FunctionComponent = ({ children }) => {
   const [{ dark, colorful }] = useTheme();
@@ -12,8 +14,10 @@ const PageWrapper: FunctionComponent = ({ children }) => {
   );
 
   return (
-    <div className={classNames(styles.PageWrapper, classes)}>
-      <div className={styles.Content}>{children}</div>
+    <div className={classNames(styles.PageOuterWrapper, classes)}>
+      <div className={styles.PageWrapper}>
+        <div className={styles.Content}>{children}</div>
+      </div>
     </div>
   );
 };

@@ -1,10 +1,12 @@
-import { createContext, FunctionComponent, useContext, useState } from 'react';
+import { createContext, useCallback, useContext, useState } from 'react';
 
-type ThemeContextData = { dark: boolean; colorful: boolean };
+import type { FunctionComponent } from 'react';
 
-type ThemeContextValue = [
+export type ThemeContextData = { dark: boolean; colorful: boolean };
+
+export type ThemeContextValue = [
   ThemeContextData,
-  ((data: ThemeContextData) => void) | null
+  (data: Partial<ThemeContextData>) => void
 ];
 
 const defaultThemeStateValue: ThemeContextData = {
@@ -12,17 +14,21 @@ const defaultThemeStateValue: ThemeContextData = {
   colorful: false
 };
 
-const ThemeContext = createContext<ThemeContextValue>([
+export const ThemeContext = createContext<ThemeContextValue>([
   defaultThemeStateValue,
-  null
+  () => {}
 ]);
 
 export const ThemeProvider: FunctionComponent = ({ children }) => {
   const [theme, changeTheme] = useState<ThemeContextData>(
     defaultThemeStateValue
   );
+  const partiallyChangeTheme = useCallback(
+    (value) => changeTheme({ ...theme, ...value }),
+    [theme, changeTheme]
+  );
   return (
-    <ThemeContext.Provider value={[theme, changeTheme]}>
+    <ThemeContext.Provider value={[theme, partiallyChangeTheme]}>
       {children}
     </ThemeContext.Provider>
   );

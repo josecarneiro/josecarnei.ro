@@ -1,3 +1,5 @@
+export const NAME = 'José Carneiro';
+// export const NAME = 'Hello World';
 export const EMAIL = 'hello@josecarnei.ro';
 export const GITHUB = 'https://github.com/josecarneiro';
 export const LINKEDIN = 'https://linkedin.com/in/josemcarneiro';

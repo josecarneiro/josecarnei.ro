@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../../styles/utilities';
 
 $dot-size: 1px;
@@ -13,22 +14,10 @@ $transparent: rgba(0, 0, 0, 0);
   background-size: 100% 100%, $dot-space * 2 $dot-space * 2, 100% 100%;
 }
 
-%AppSkew {
-  --angle: #{$page-skew-angle};
-  height: calc(100% + (var(--angle) * 2vw));
-  transform: skewY(calc(var(--angle) * 1deg));
-}
-
-.PageWrapper {
-  z-index: 1;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-color);
-  @extend %DottedBackground;
-  @extend %AppSkew;
+.PageOuterWrapper {
+  width: 100%;
+  overflow: hidden;
+  --skew-angle-unitless: 10;
   &.Dark {
     --text-color: white;
     --trailing-text-outline-color: hsla(0, 100%, 100%, 0.8);
@@ -54,7 +43,41 @@ $transparent: rgba(0, 0, 0, 0);
   }
 }
 
+// Should have a negative margin with the length
+// of the oposing side of the triangle angle
+//    adjacent -> 50vw
+//  ----------------
+//  \  angle -> 2º  |
+//        \         |  oposite -> X
+//               \  |
+//                 V
+// Formula to use
+// toa
+// tan(a) = oposite / adjacent
+// oposite = tan(a) * adjacent
+
+.PageWrapper {
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  --triangle-oposite-side: calc(
+    #{calculate-tan(var(--skew-angle-unitless))} * 50vw
+  );
+  padding: calc(2 * var(--triangle-oposite-side)) 0;
+  margin: calc(-1 * var(--triangle-oposite-side)) 0;
+  transform: skewY(calc(var(--skew-angle-unitless) * 1deg));
+  color: var(--text-color);
+  @extend %DottedBackground;
+}
+
 .Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: $container-width;
+  min-height: calc(100vh - 2 * var(--triangle-oposite-side));
   padding: 0 1em;
 }
