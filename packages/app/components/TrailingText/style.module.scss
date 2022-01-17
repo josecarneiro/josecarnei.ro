@@ -1,9 +1,9 @@
 @use 'sass:math';
 @import '../../styles/utilities';
 
-// $trail-levels: 10;
+$trail-levels: 10;
 // $trail-distance: math.div(1, 16 * 1.25) * 1em;
-// $trail-outline-width: 0.75px;
+$trail-outline-width: 0.75px;
 
 .Title {
   position: relative;
