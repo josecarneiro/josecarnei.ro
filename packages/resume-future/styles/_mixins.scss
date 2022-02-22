@@ -1,0 +1,27 @@
+@mixin no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@mixin text-gradient($background) {
+  background: $background;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin screen($size) {
+  $min-width: 50em;
+  @if ($size == small) {
+    $min-width: 20em;
+  }
+  @if ($size == medium) {
+    $min-width: 30em;
+  }
+  @if ($size == large) {
+    $min-width: 40em;
+  }
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
