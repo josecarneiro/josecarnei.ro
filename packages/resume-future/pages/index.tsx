@@ -69,7 +69,8 @@ const HomePage = () => {
           </article>
         </article>
         <article>
-          <h3>Freelance Development</h3>
+          <h3>Independent Work</h3>
+          <h5>Full-stack Developer, Freelancer</h5>
           <p>
             Built web applications for over 10 clients, with multiple
             technologies. Vue.js, Wordpress, Ghost,
@@ -80,9 +81,9 @@ const HomePage = () => {
         <h2>Education</h2>
         <article>
           <h3>Católica Lisbon School of Business and Economics</h3>
+          <h5>Business Management and Administration Graduate</h5>
           <p>
-            Graduated in Business Management and Administration at the top
-            Business university in Portugal. Focused on strategy, operations
+            Top Business university in Portugal. Focused on strategy, operations
             management, project management and data modeling.
           </p>
         </article>

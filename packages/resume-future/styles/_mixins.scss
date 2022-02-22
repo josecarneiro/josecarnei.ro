@@ -25,3 +25,19 @@
     @content;
   }
 }
+
+@mixin make-special-list {
+  ul {
+    li {
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 0.5em;
+        height: 0.5em;
+        margin-right: 0.5em;
+        margin-bottom: 0.05em;
+        background-color: $grey-darkest;
+      }
+    }
+  }
+}

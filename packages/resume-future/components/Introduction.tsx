@@ -3,7 +3,7 @@ import type { FunctionComponent } from 'react';
 const Introduction: FunctionComponent = () => (
   <header>
     <h1>José Maria Carneiro</h1>
-    <h3>Full-stack Developer based in Lisbon, Portugal</h3>
+    <h3>Senior Front-end Developer based in Lisbon, Portugal</h3>
     <ul>
       <li>
         <strong>Email:</strong>{' '}
