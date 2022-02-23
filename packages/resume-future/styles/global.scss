@@ -4,11 +4,6 @@
   margin: 2.5em 2.5em;
 }
 
-body {
-  font-family: $font-body;
-  line-height: 1.5;
-}
-
 * {
   &,
   &:before,
@@ -19,7 +14,7 @@ body {
 
 html {
   box-sizing: border-box;
-  font-size: $body-font-size;
+  font-size: $text-base-font-size;
   @media screen {
     padding: 2em 2.5em;
   }
@@ -27,8 +22,9 @@ html {
 
 body {
   margin: 0;
-  font-family: $font-family;
-  line-height: $body-line-height;
+  // font-family: $font-body;
+  font-family: $text-font-family;
+  line-height: $text-line-height;
   @media screen {
     padding: 2em 2.5em;
   }
@@ -54,7 +50,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1;
+  line-height: $heading-line-height;
   margin-bottom: 1.5rem;
 }
 
@@ -68,6 +64,7 @@ h4,
 h5,
 h6 {
   margin-bottom: 0.75rem;
+  font-weight: normal;
 }
 
 p {
@@ -81,41 +78,29 @@ h1 {
   font-weight: 400;
 }
 
-// h2,
-// h3,
-// h4 {
-//   margin-bottom: 0.5rem;
-// }
-
 h1 {
   font-size: 3.75em;
-  //   font-size: 2.75em;
-  // margin-bottom: 0.5rem;
-  // line-height: 0.875;
 }
 
 h2 {
   font-size: 2em;
-  //   font-size: 2em;
 }
 
 h3 {
   font-size: 1.5em;
-  //   font-size: 1.5em;
 }
 
 h4 {
   font-size: 1.25em;
-  //   font-size: 1.25em;
 }
 
 h5 {
   font-size: 1.125em;
 }
 
-// h6 {
-//   font-size: 1em;
-// }
+h6 {
+  font-size: 1em;
+}
 
 small {
   font-size: 0.875em;
@@ -149,10 +134,12 @@ main {
   header,
   footer,
   article {
-    page-break-inside: avoid;
     &:not(:last-child) {
-      margin-bottom: 1em;
+      margin-bottom: 1rem;
     }
+  }
+  article {
+    page-break-inside: avoid;
   }
 }
 
@@ -168,4 +155,10 @@ header {
     list-style: none;
     gap: 1em;
   }
+}
+
+.role {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }

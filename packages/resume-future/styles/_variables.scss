@@ -1,43 +1,21 @@
-$font-family-base-generic: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-  Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-$font-family-base: Monaco, Andale Mono, monospace, $font-family-base-generic;
+// Text
+$text-font-family-base: Monaco, Andale Mono, monospace;
+$text-font-family: 'Roboto Mono', $text-font-family-base;
+// $text-base-font-size: 0.875em;
+$text-base-font-size: 0.75em;
+$text-line-height: 1.5;
+$text-line-height: 2;
+$heading-line-height: 1;
 
-$font-family: 'Roboto Mono', $font-family-base;
-
-// $body-font-size: 0.875em;
-$body-font-size: 0.75em;
-$body-line-height: 2;
-
-$heading-line-height: 1.125;
-$title-font-size: 6.75em;
-
-$container-width: 34em;
-$page-skew-angle: 10;
-
-// VARIABLES
+// Colors
 $white: #fff;
 $grey-light: #f3f3f3;
 $grey-dark: #444;
 $grey-darkest: #333;
 $black: #000;
 
-$ease-cubic: cubic-bezier(0.55, 0, 0.5, 0.75);
-$speed-medium: 0.3s;
-
-$tablet: 929px;
-
-// $font-monospace: 'Inconsolata', monospace;
-$font-monospace: 'Roboto Mono', monospace;
-
-$font-body: $font-monospace;
-$font-heading: $font-monospace;
-
-$page-background-color: $grey-light;
-
 // $unit: 0.24 * 16px;
-
 // $page-width: 210 * $unit;
 // $page-height: 297.1 * $unit;
 // $page-padding: 16 * $unit;
-
 $page-width: 700px;
