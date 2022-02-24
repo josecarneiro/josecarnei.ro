@@ -16,9 +16,8 @@
 
 .listing__row {
   display: flex;
-  small {
-    margin-left: auto;
-  }
+  align-items: center;
+  justify-content: space-between;
 }
 
 .grid {

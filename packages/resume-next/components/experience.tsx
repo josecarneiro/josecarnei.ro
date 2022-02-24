@@ -16,7 +16,7 @@ const ResumeExperience: FunctionComponent<ResumeExperienceProps> = ({
         { company, dateStart, dateEnd, description, position, highlights },
         index
       ) => (
-        <div key={index} className="listing__item">
+        <article key={index} className="listing__item">
           <header className="listing__header">
             <div className="listing__row">
               <h3>{company}</h3>
@@ -30,7 +30,7 @@ const ResumeExperience: FunctionComponent<ResumeExperienceProps> = ({
               <li key={highlight}>{highlight}</li>
             ))}
           </ul>
-        </div>
+        </article>
       )
     )}
   </section>

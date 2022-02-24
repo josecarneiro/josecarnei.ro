@@ -1,15 +1,31 @@
-const formatDate = (dates: any[]): string => {
-  let start = [];
-  if (dates[0].month) start.push(dates[0].month);
-  if (!dates[1] || dates[1].year !== dates[0].year) start.push(dates[0].year);
-  let end = [];
-  if (dates[1]) {
-    end = [dates[1].month, dates[1].year];
+import type { ResumeDate } from '../resume-types';
+
+const formatDate = ([startDate, endDate]: ResumeDate[]): string => {
+  const start = [];
+  const end = [];
+  let returnSingleDate = false;
+  if (
+    endDate &&
+    startDate.month === endDate.month &&
+    startDate.year === endDate.year
+  ) {
+    returnSingleDate = true;
+  }
+  if (startDate.month) {
+    start.push(startDate.month);
+  }
+  if (!endDate || startDate.year !== endDate.year) {
+    start.push(startDate.year);
+  }
+  if (endDate) {
+    end.push(endDate.month, endDate.year);
   } else {
     end.push('Present Day');
   }
-  return [start, end].map((v) => v.join(' ')).join(' - ');
-  // return `${start.join(' ')} - ${end.join(' ')}`;
+  const dateGap = [start, end].map((value) => value.join(' '));
+  if (returnSingleDate) return dateGap[1];
+  if (dateGap[0] === dateGap[1]) return dateGap[0];
+  return dateGap.join(' - ');
 };
 
 export default formatDate;

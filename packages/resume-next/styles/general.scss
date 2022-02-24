@@ -29,21 +29,20 @@ body {
 main {
   max-width: $page-width;
   margin: 0 auto;
-  & > section,
-  & > header,
-  & > footer {
-    // margin-bottom: 1em;
-    // page-break-inside: avoid;
-    // &:last-child {
-    //   margin-bottom: 0;
-    // }
-  }
+  // & > section,
+  // & > header,
+  // & > footer {
+  //   margin-bottom: 1em;
+  //   page-break-inside: avoid;
+  //   &:last-child {
+  //     margin-bottom: 0;
+  //   }
+  // }
 }
 
 header {
   span {
     display: inline-block;
-    // margin-right: 0.5em;
     margin-right: 1em;
     &:last-child {
       margin-right: 0;

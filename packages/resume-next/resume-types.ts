@@ -1,4 +1,4 @@
-interface Date {
+export interface ResumeDate {
   day?: number;
   month?: string;
   year: number;
@@ -16,11 +16,11 @@ export interface About {
   }[];
 }
 
-interface Certification {
+export interface Certification {
   title: string;
   issuer: string;
   description: string;
-  date: Date;
+  date: ResumeDate;
 }
 
 export type Certifications = Certification[];
@@ -31,8 +31,8 @@ export interface EducationItem {
   school: string;
   degree: string;
   description?: string;
-  dateStart: Date;
-  dateEnd?: Date;
+  dateStart: ResumeDate;
+  dateEnd?: ResumeDate;
   highlights: string[];
 }
 
@@ -42,8 +42,8 @@ export interface ExperienceItem {
   company: string;
   position: string;
   description?: string;
-  dateStart: Date;
-  dateEnd?: Date;
+  dateStart: ResumeDate;
+  dateEnd?: ResumeDate;
   highlights: string[];
 }
 
@@ -54,7 +54,7 @@ export interface LanguageCertification {
   name: string;
   issuer: string;
   grade: string;
-  date: Date;
+  date: ResumeDate;
 }
 
 export interface LanguageItem {
@@ -80,6 +80,17 @@ export interface SkillItem {
 
 export type Skills = SkillItem[];
 
-export type VolunteeringItem = string;
+export type LegacyVolunteeringItem = string;
+
+export type LegacyVolunteering = LegacyVolunteeringItem[];
+
+export interface VolunteeringItem {
+  cause: string;
+  description?: string;
+  role: string;
+  dateStart: ResumeDate;
+  dateEnd?: ResumeDate;
+  highlights?: string[];
+}
 
 export type Volunteering = VolunteeringItem[];

@@ -1,5 +1,5 @@
-import { FunctionComponent } from 'react';
-import { About } from '../resume-types';
+import type { FunctionComponent } from 'react';
+import type { About } from '../resume-types';
 
 interface ResumeAboutProps {
   about: About;

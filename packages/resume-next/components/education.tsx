@@ -1,6 +1,7 @@
-import { FunctionComponent } from 'react';
-import { Education } from '../resume-types';
 import formatDate from '../utils/format-date';
+
+import type { FunctionComponent } from 'react';
+import type { Education } from '../resume-types';
 
 interface ResumeEducationProps {
   education: Education;
@@ -16,7 +17,7 @@ const ResumeEducation: FunctionComponent<ResumeEducationProps> = ({
         { school, dateStart, dateEnd, description, degree, highlights },
         index
       ) => (
-        <div key={index} className="listing__item">
+        <article key={index} className="listing__item">
           <header className="listing__header">
             <div className="listing__row">
               <h3>{school}</h3>
@@ -30,7 +31,7 @@ const ResumeEducation: FunctionComponent<ResumeEducationProps> = ({
               <li key={highlight}>{highlight}</li>
             ))}
           </ul>
-        </div>
+        </article>
       )
     )}
   </section>
