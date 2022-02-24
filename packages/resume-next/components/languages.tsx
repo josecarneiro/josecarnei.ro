@@ -22,10 +22,10 @@ const ResumeLanguages: FunctionComponent<ResumeLanguagesProps> = ({
           <strong>Language</strong>
         </div>
         <div className="col">
-          <strong>Orality</strong>
+          <strong>Speaking</strong>
         </div>
         <div className="col">
-          <strong>Comprehension</strong>
+          <strong>Comprehending</strong>
         </div>
         <div className="col">
           <strong>Writing</strong>
@@ -62,14 +62,14 @@ const ResumeLanguages: FunctionComponent<ResumeLanguagesProps> = ({
           </div>
           <div className="col--large">
             {certifications.map(({ name, grade, date }) => (
-              <>
+              <span key={name}>
                 <em>Certification</em>
                 <span>{name}</span>
                 <em>Grade</em>
                 <span>{grade}</span>
                 <em>Date</em>
                 <span>{date.year}</span>
-              </>
+              </span>
             ))}
           </div>
         </div>

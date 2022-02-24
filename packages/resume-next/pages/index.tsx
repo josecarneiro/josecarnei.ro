@@ -21,10 +21,10 @@ const HomePage: FunctionComponent = () => (
     <ResumeAbout about={about} />
     <ResumeExperience experience={experience} />
     <ResumeEducation education={education} />
+    <ResumeCertifications certifications={certifications} />
     <ResumeVolunteering volunteering={volunteering} />
     <ResumeLanguages languages={languages} />
-    <ResumeCertifications certifications={certifications} />
-    <ResumeSkills skills={skills} />
+    {/* <ResumeSkills skills={skills} /> */}
   </main>
 );
 

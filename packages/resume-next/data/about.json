@@ -1,25 +1,36 @@
 {
   "name": {
     "first": "José Maria",
-    "last": "Carneiro",
-    "full": "José Maria Pinheiro Rego Gonçalves Carneiro"
+    "last": "Carneiro"
   },
-  "birthDate": {
-    "day": 13,
-    "month": "May",
-    "year": 1993
-  },
-  "location": {
-    "country": "Portugal",
-    "city": "Lisboa"
-  },
-  "contact": {
-    "email": "hello@josecarnei.ro",
-    "website": "josecarnei.ro",
-    "social": {
-      "linkedin": "josemcarneiro",
-      "github": "josecarneiro"
+  "highlights": [
+    {
+      "name": "Role",
+      "value": "Front-end Developer"
+    },
+    {
+      "name": "Location",
+      "value": "Lisbon, Portugal"
+    },
+    {
+      "name": "Email",
+      "value": "hello@josecarnei.ro",
+      "href": "mailto:hello@josecarnei.ro"
+    },
+    {
+      "name": "Website",
+      "value": "josecarnei.ro",
+      "href": "https://josecarnei.ro"
+    },
+    {
+      "name": "LinkedIn",
+      "value": "in/josemcarneiro",
+      "href": "https://linkedin.com/in/josemcarneiro"
+    },
+    {
+      "name": "GitHub",
+      "value": "josecarneiro",
+      "href": "https://github.com/josecarneiro"
     }
-  },
-  "nationality": "Portuguese"
+  ]
 }

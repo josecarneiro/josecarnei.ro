@@ -8,22 +8,12 @@ export interface About {
   name: {
     first: string;
     last: string;
-    full?: string;
   };
-  birthDate: Date;
-  nationality: string;
-  location: {
-    city: string;
-    country: string;
-  };
-  contact: {
-    email: string;
-    website: string;
-    social: {
-      github: string;
-      linkedin: string;
-    };
-  };
+  highlights: {
+    name: string;
+    value: string;
+    href?: string;
+  }[];
 }
 
 interface Certification {

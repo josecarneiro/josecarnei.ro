@@ -6,44 +6,19 @@ interface ResumeAboutProps {
 }
 
 const ResumeAbout: FunctionComponent<ResumeAboutProps> = ({
-  about: { contact, ...about }
+  about: { highlights, name }
 }) => (
   <header className="resume__section resume__section--about">
     <h1>
-      {about.name.first} {about.name.last}
+      {name.first} {name.last}
     </h1>
     <div>
-      <span>
-        <strong>Born </strong>
-        {about.birthDate.month} {about.birthDate.day}
-        <sub>th</sub>, {about.birthDate.year}
-      </span>
-      <span>
-        <strong>Nationality</strong> {about.nationality}
-      </span>
-      <span>
-        <strong>Location</strong> {about.location.city},{' '}
-        {about.location.country}
-      </span>
-      <span>
-        <strong>Email</strong>{' '}
-        <a href={`mailto:${contact.email}`}>{contact.email}</a>
-      </span>
-      <span>
-        <strong>Website</strong> <a href={contact.website}>{contact.website}</a>
-      </span>
-      <span>
-        <strong>LinkedIn</strong>{' '}
-        <a href={`https://linkedin.com/${contact.social.linkedin}`}>
-          {contact.social.linkedin}
-        </a>
-      </span>
-      <span>
-        <strong>Github</strong>{' '}
-        <a href={`https://linkedin.com/${contact.social.github}`}>
-          {contact.social.github}
-        </a>
-      </span>
+      {highlights.map(({ name, value, href }) => (
+        <span key={name}>
+          <strong>{name}</strong>{' '}
+          {(href && <a href={href}>{value}</a>) || value}
+        </span>
+      ))}
     </div>
   </header>
 );

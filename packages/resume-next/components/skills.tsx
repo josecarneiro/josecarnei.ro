@@ -10,7 +10,7 @@ const ResumeSkills: FunctionComponent<ResumeSkillsProps> = ({ skills }) => (
     <h2>Skills</h2>
     <p>
       {skills.map(({ category, list }) => (
-        <>
+        <span key={category}>
           <strong>{category}</strong>
           {list.map(({ name, value }) => (
             <>
@@ -18,7 +18,7 @@ const ResumeSkills: FunctionComponent<ResumeSkillsProps> = ({ skills }) => (
               <span>{value}</span>
             </>
           ))}
-        </>
+        </span>
       ))}
     </p>
   </section>

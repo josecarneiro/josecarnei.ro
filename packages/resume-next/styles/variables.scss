@@ -9,8 +9,11 @@ $speed-medium: 0.3s;
 
 $tablet: 929px;
 
-$font-monospace: 'Inconsolata', monospace;
-// $font-monospace: 'Roboto Mono', monospace;
+// $text-font-size: 0.875em;
+$text-font-size: 0.75em;
+
+// $font-monospace: 'Inconsolata', monospace;
+$font-monospace: 'Roboto Mono', monospace;
 
 $font-body: $font-monospace;
 $font-heading: $font-monospace;
