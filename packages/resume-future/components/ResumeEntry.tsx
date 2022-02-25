@@ -22,12 +22,14 @@ const ResumeEntry: FunctionComponent<ResumeEntryProps> = ({
   ...props
 }) => (
   <article {...props}>
-    <h3>{institution.name}</h3>
-    {institution.description && <h6>{institution.description}</h6>}
+    <div className="institution">
+      <h3>{institution.name}</h3>
+      {institution.description && <h5>{institution.description}</h5>}
+    </div>
     {roles &&
       roles.map(({ name, period }) => (
         <div key={name} className="role">
-          <h5>{name}</h5>
+          <h4>{name}</h4>
           {period && <h6>{period}</h6>}
         </div>
       ))}

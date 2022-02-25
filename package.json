@@ -3,10 +3,12 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "prepare": "npm run bootstrap",
     "build": "lerna run build",
-    "deploy:clean": "rm -rf dist",
+    "deploy:clean": "rm -rf out",
     "deploy:app": "cp -R packages/app/out dist",
-    "deploy:resume": "cp packages/resume/dist/jose-carneiro-curriculum-vitae.pdf dist/curriculum-vitae.pdf",
+    "deploy:resume-legacy": "cp packages/resume-next/out/curriculum-vitae.pdf packages/app/out/resume.pdf",
+    "deploy:resume": "lerna run build",
     "deploy": "npm run deploy:clean && npm run deploy:app"
   },
   "devDependencies": {

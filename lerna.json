@@ -1,6 +1,4 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/app", "packages/resume-next"],
   "version": "0.0.0"
 }

@@ -3,16 +3,16 @@ $text-font-family-base: Monaco, Andale Mono, monospace;
 $text-font-family: 'Roboto Mono', $text-font-family-base;
 // $text-base-font-size: 0.875em;
 $text-base-font-size: 0.75em;
-$text-line-height: 1.5;
-$text-line-height: 2;
 $heading-line-height: 1;
 
 // Colors
-$white: #fff;
-$grey-light: #f3f3f3;
-$grey-dark: #444;
-$grey-darkest: #333;
-$black: #000;
+$white: white;
+$grey-lightest: hsl(0, 0%, 95%);
+$grey-light: hsl(0, 0%, 45%);
+$grey: hsl(0, 0%, 40%);
+$grey-dark: hsl(0, 0%, 30%);
+$grey-darkest: hsl(0, 0%, 20%);
+$black: black;
 
 // $unit: 0.24 * 16px;
 // $page-width: 210 * $unit;

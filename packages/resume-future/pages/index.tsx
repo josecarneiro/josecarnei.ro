@@ -139,7 +139,7 @@ const HomePage = () => {
         >
           <p>
             Built web applications for over 10 clients, with multiple
-            technologies. Vue.js, Wordpress, Ghost,
+            technologies. Vue.js, Wordpress, Ghost, PHP, MySQL.
           </p>
         </ResumeEntry>
         <ResumeEntry
@@ -151,12 +151,8 @@ const HomePage = () => {
           roles={[{ name: 'Intern', period: 'September 2012 - December 2012' }]}
         >
           <p>
-            Processing and validation of financial information regarding telecom
-            operators and carriers using SQL, Excel and Access.
-          </p>
-          <p>
-            Verification and comparison of offers promoted by telecom operators
-            and the ones loaded into ANACOM’s “Observatório Tarifário”.
+            Pricing data validation and uniformization for telecom operators
+            with SQL, Excel and Access.
           </p>
         </ResumeEntry>
       </ResumeSection>
@@ -164,19 +160,25 @@ const HomePage = () => {
         <ResumeEntry
           institution={{
             name: 'Católica Lisbon School of Business and Economics',
-            description:
-              '#23 Business School worldwide according to 2021 Financial Times ranking'
+            // description:
+            //   '#23 Business School worldwide according to 2021 Financial Times ranking'
+            description: '#23 FT Ranking'
           }}
           roles={[{ name: 'Business Management and Administration' }]}
         >
           <p>
-            Top Business university in Portugal. Focused on strategy, operations
-            management, project management and data modeling.
+            Focused on strategy, operations management, project management and
+            data modeling.
           </p>
         </ResumeEntry>
       </ResumeSection>
       <ResumeSection title="Certifications">
-        <p>Google Certified Mobile Web Specialist</p>
+        Google Mobile Web Specialist January 2020 Google Developers
+        Certification Program Issued to advanced-level mobile web developers,
+        who are capable of writing performant and responsive applications for
+        the mobile web. Certifies the proficiency in developing with modern
+        technologies.
+        <p>Google Mobile Web Specialist</p>
         <p>Cambridge FCE, Grade A</p>
       </ResumeSection>
       <ResumeSection title="Languages">
@@ -184,12 +186,11 @@ const HomePage = () => {
           Portuguese, Native Speaker. English, profecient. Spanish, advanced.
         </p>
       </ResumeSection>
-      <ResumeSection title="Volunteering">
+      <ResumeSection title="Volunteering" className="volunteering">
         <ResumeEntry
           institution={{
             name: 'Require("lx")',
-            description:
-              "Lisbon's largest JavaScript developer montly meet up for a group of over 2.200 developers."
+            description: "Lisbon's largest monthly developer meetup"
           }}
           roles={[{ name: 'Organizer', period: '2018 - Present Day' }]}
         >
@@ -201,9 +202,9 @@ const HomePage = () => {
         <ResumeEntry
           institution={{
             name: 'Vue.js Lisbon',
-            description: 'Founder, Organizer'
+            description: "Lisbon's first Vue.js meetup"
           }}
-          roles={[{ name: 'Organizer', period: '2019 - Present Day' }]}
+          roles={[{ name: 'Founder, Organizer', period: '2019 - Present Day' }]}
         >
           <p>
             Founded Lisbon&#39;s only regularly held meetup targeting Vue.js
@@ -213,8 +214,7 @@ const HomePage = () => {
         <ResumeEntry
           institution={{
             name: 'United Nations Connect For Effect',
-            description:
-              'Global Hackathon aiming to tackle Sustainable Development Goals'
+            description: 'Global Hackathon for Sustainable'
           }}
           roles={[{ name: 'Organizer', period: '2017' }]}
         />
@@ -225,8 +225,7 @@ const HomePage = () => {
         <ResumeEntry
           institution={{
             name: 'BET - Bring Entrepreneurs Together',
-            description:
-              'Global Hackathon aiming to tackle Sustainable Development Goals'
+            description: 'Entrepreneurship Club'
           }}
           roles={[{ name: 'Team Member', period: '2012 - 2017' }]}
         />

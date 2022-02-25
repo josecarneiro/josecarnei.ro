@@ -1,20 +1,12 @@
 @import 'variables';
 @import 'mixins';
+@import 'base';
 
 @page {
   margin: 2.5em 2.5em;
 }
 
-* {
-  &,
-  &:before,
-  &:after {
-    box-sizing: inherit;
-  }
-}
-
 html {
-  box-sizing: border-box;
   font-size: $text-base-font-size;
   @media screen {
     padding: 2em 2.5em;
@@ -22,27 +14,11 @@ html {
 }
 
 body {
-  margin: 0;
-  // font-family: $font-body;
   font-family: $text-font-family;
-  line-height: $text-line-height;
+  line-height: 2;
   @media screen {
     padding: 2em 2.5em;
   }
-}
-
-a {
-  color: inherit;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
 }
 
 h1,
@@ -52,78 +28,44 @@ h4,
 h5,
 h6 {
   line-height: $heading-line-height;
-  margin-bottom: 1.5rem;
 }
 
 h1,
 h2,
-h3 {
-  margin-bottom: 1.5rem;
+h3,
+h4,
+h5 {
+  font-weight: bold;
 }
 
-h4,
-h5,
 h6 {
-  margin-bottom: 0.75rem;
   font-weight: normal;
 }
 
-p {
-  margin-bottom: 0;
-  & + p {
-    margin-bottom: 1.5rem;
+h5 {
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+header,
+article,
+section,
+div {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
   }
 }
 
-h1 {
-  font-weight: 400;
-}
-
-h1 {
-  font-size: 3.75em;
-}
-
-h2 {
-  font-size: 2em;
-}
-
-h3 {
-  font-size: 1.5em;
-}
-
-h4 {
-  font-size: 1.25em;
-}
-
-h5 {
-  font-size: 1.125em;
-}
-
-h6 {
-  font-size: 1em;
-}
-
-small {
-  font-size: 0.875em;
-}
-
-sup,
-sub {
-  font-size: 0.75em;
-}
-
-em {
-  font-weight: 700;
-  color: $grey-dark;
-}
-
-strong {
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-b {
-  font-weight: 700;
+p {
+  &:not(:last-of-type) {
+    margin-bottom: 0;
+  }
 }
 
 main {
@@ -131,30 +73,47 @@ main {
   @media screen {
     max-width: $page-width;
   }
-  section,
-  header,
-  footer,
-  article {
-    &:not(:last-child) {
-      margin-bottom: 1rem;
-    }
-  }
   article {
     page-break-inside: avoid;
   }
+  & > header {
+    margin-bottom: 2rem !important;
+    h1,
+    h3 {
+      font-weight: normal;
+    }
+    ul {
+      font-size: 0.875em;
+      display: flex;
+      gap: 1em;
+    }
+  }
 }
 
-header {
-  h3 {
+section {
+  & > h2 {
+    // margin-bottom: 1.5rem !important;
     font-weight: normal;
+    // font-family: sans-serif;
+    // color: $grey-light;
+    // font-weight: lighter;
+    // transform: rotate(-90deg) translateY(-3rem) translateX(-10em);
+    // transform-origin: top left;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    color: $grey;
   }
-  ul {
-    font-size: 0.875em;
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    gap: 1em;
+}
+
+article {
+  h6 {
+    color: $grey;
+  }
+  article {
+    h3 {
+      font-size: 1.25em;
+      color: $grey-dark;
+    }
   }
 }
 
@@ -162,4 +121,35 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  // h4,
+  // h6 {
+  //   margin: 0;
+  // }
 }
+
+article {
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    h2,
+    h3,
+    h4,
+    h6 {
+      margin: 0;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.institution {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+// .volunteering {
+//   article {
+//     font-size: 0.75em;
+//   }
+// }

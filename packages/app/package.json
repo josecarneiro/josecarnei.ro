@@ -7,7 +7,9 @@
     "build": "next build && next export",
     "start": "next start",
     "serve": "serve out",
-    "lint": "next lint"
+    "lint": "next lint",
+    "move-resume": "cp node_modules/@josecarneiro/resume/out/curriculum-vitae.pdf out/resume.pdf",
+    "postbuild": "npm run move-resume"
   },
   "dependencies": {
     "next": "^12.0.7",
@@ -15,6 +17,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@josecarneiro/resume": "*",
     "@types/react": "^17.0.37",
     "autoprefixer": "^10.4.0",
     "eslint": "8.5.0",

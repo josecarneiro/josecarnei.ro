@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { FunctionComponent } from 'react';
 import '../styles/main.scss';
 
-const TITLE = 'jose-carneiro-curriculum-vitae';
+const TITLE = 'curriculum-vitae';
 
 const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
   <>
