@@ -1,10 +1,42 @@
 [
-  "Require('lx') Organizer, 2018 to present day",
-  "Vue.js Lisbon Organizer, 2019 to present day",
-  "Web Summit, 2017 and 2018",
-  "United Nations Connect For Effect, 2017",
-  "BET - Bring Entrepreneurs Together, 2012 to 2017",
-  "AIESEC, 2012 to 2014",
-  "Banco Alimentar, Lisboa, 2011 to 2015",
-  "Movimento Teresiano Apostolado de Elvas, 2005 to 2011"
+  {
+    "cause": "Require(\"lx\")",
+    "role": "Organizer of Portugal's largest monthly developer meetup",
+    "dateStart": { "year": 2018 }
+  },
+  {
+    "cause": "Vue.js Lisbon",
+    "role": "Founder and organizer of Portugal's first meetup targeting Vue.js developers",
+    "dateStart": { "year": 2019 }
+  },
+  {
+    "cause": "United Nations Connect For Effect",
+    "role": "Organizer of Global Hackathon tackling Sustainable Development Goals",
+    "dateStart": { "year": 2017 },
+    "dateEnd": { "year": 2017 }
+  },
+  {
+    "cause": "Web Summit",
+    "role": "Volunteer Organizer of logistics",
+    "dateStart": { "year": 2018 },
+    "dateEnd": { "year": 2019 }
+  },
+  {
+    "cause": "BET - Bring Entrepreneurs Together",
+    "role": "Team member of Entrepreneurship Club",
+    "dateStart": { "year": 2012 },
+    "dateEnd": { "year": 2017 }
+  },
+  {
+    "cause": "AIESEC",
+    "role": "Team member in Communication Team",
+    "dateStart": { "year": 2012 },
+    "dateEnd": { "year": 2014 }
+  },
+  {
+    "cause": "Banco Alimentar, Lisboa",
+    "role": "Food collection and distribution to families in need",
+    "dateStart": { "year": 2011 },
+    "dateEnd": { "year": 2015 }
+  }
 ]

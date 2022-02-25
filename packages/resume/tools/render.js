@@ -2,13 +2,12 @@
 
 const { join } = require('path');
 const { readFileSync: readFile } = require('fs');
-// const mkdirp = require('mkdirp-promise');
 const puppeteer = require('puppeteer');
 
 const loadData = (url) =>
-  readFile(join(__dirname, '..', url.replace('file://', '')), 'utf-8');
+  readFile(join(__dirname, '../out', url.replace('file://', '')), 'utf-8');
 
-module.exports = async ({ url, destination }, { debug, ...options } = {}) => {
+const render = async ({ url, destination }, { debug, ...options } = {}) => {
   let browser;
   try {
     // await mkdirp(destination);
@@ -20,6 +19,7 @@ module.exports = async ({ url, destination }, { debug, ...options } = {}) => {
     await page.setRequestInterception(true);
     page.on('request', (req) => {
       const url = req.url();
+      console.log(url);
       if (url.startsWith('file://') && url.endsWith('.css')) {
         const css = loadData(url);
         return req.respond({
@@ -47,3 +47,21 @@ module.exports = async ({ url, destination }, { debug, ...options } = {}) => {
     await browser.close();
   }
 };
+
+const distPath = join(__dirname, '..', 'out');
+const localPath = join(distPath, 'index.html');
+
+const run = async () => {
+  try {
+    await render({
+      url: `file://${localPath}`,
+      destination: distPath
+    });
+    process.exit(0);
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+};
+
+run();
