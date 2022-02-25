@@ -12,6 +12,7 @@ const render = async ({ url, destination }, { debug, ...options } = {}) => {
   try {
     // await mkdirp(destination);
     browser = await puppeteer.launch({
+      args: ['--no-sandbox'],
       ...(debug && { headless: false, slowMo: 200 }),
       ...options
     });
