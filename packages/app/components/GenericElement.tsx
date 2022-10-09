@@ -1,10 +1,10 @@
-import type { FunctionComponent } from 'react';
+import type { FunctionComponentWithChildren } from '../types';
 
 export type GenericElementProps = {
   tag?: keyof JSX.IntrinsicElements;
 } & { className: string };
 
-const GenericElement: FunctionComponent<GenericElementProps> = ({
+const GenericElement: FunctionComponentWithChildren<GenericElementProps> = ({
   tag: Tag,
   children,
   ...props

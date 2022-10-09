@@ -1,42 +1,36 @@
 [
   {
     "cause": "Require(\"lx\")",
-    "role": "Organizer of Portugal's largest monthly developer meetup",
+    "role": "Organizer of Portugal's largest monthly developer meetup.",
     "dateStart": { "year": 2018 }
   },
   {
     "cause": "Vue.js Lisbon",
-    "role": "Founder and organizer of Portugal's first meetup targeting Vue.js developers",
+    "role": "Founder and organizer of Portugal's first meetup targeting Vue.js developers.",
     "dateStart": { "year": 2019 }
   },
   {
     "cause": "United Nations Connect For Effect",
-    "role": "Organizer of Global Hackathon tackling Sustainable Development Goals",
+    "role": "Organizer of Global Hackathon tackling the 17 United Nations Sustainable Development Goals.",
     "dateStart": { "year": 2017 },
     "dateEnd": { "year": 2017 }
   },
   {
     "cause": "Web Summit",
-    "role": "Volunteer Organizer of logistics",
+    "role": "Volunteer organizer in the logistics and operations team.",
     "dateStart": { "year": 2018 },
     "dateEnd": { "year": 2019 }
   },
   {
     "cause": "BET - Bring Entrepreneurs Together",
-    "role": "Team member of Entrepreneurship Club",
+    "role": "Lead of communications team, managing 14 student volunteers.",
     "dateStart": { "year": 2012 },
     "dateEnd": { "year": 2017 }
   },
   {
     "cause": "AIESEC",
-    "role": "Team member in Communication Team",
+    "role": "Team member in communications team, responsible for social media and website.",
     "dateStart": { "year": 2012 },
     "dateEnd": { "year": 2014 }
-  },
-  {
-    "cause": "Banco Alimentar, Lisboa",
-    "role": "Food collection and distribution to families in need",
-    "dateStart": { "year": 2011 },
-    "dateEnd": { "year": 2015 }
   }
 ]

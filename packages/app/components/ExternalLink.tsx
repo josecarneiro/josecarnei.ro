@@ -1,11 +1,12 @@
-import type { FunctionComponent, ReactHTMLElement } from 'react';
+import type { ReactHTMLElement } from 'react';
+import type { FunctionComponentWithChildren } from '../types';
 
 export interface ExternalLinkProps
   extends Partial<Omit<ReactHTMLElement<HTMLAnchorElement>, 'href'>> {
   to: string;
 }
 
-const ExternalLink: FunctionComponent<ExternalLinkProps> = ({
+const ExternalLink: FunctionComponentWithChildren<ExternalLinkProps> = ({
   to,
   children
 }) => (

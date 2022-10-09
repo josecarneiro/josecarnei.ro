@@ -1,9 +1,10 @@
-import { FunctionComponent, useMemo } from 'react';
+import { useMemo } from 'react';
 import classNames from 'classnames';
 import { useTheme } from '../../context/theme';
 import styles from './style.module.scss';
+import type { FunctionComponentWithChildren } from '../../types';
 
-const PageWrapper: FunctionComponent = ({ children }) => {
+const PageWrapper: FunctionComponentWithChildren = ({ children }) => {
   const [{ dark, colorful }] = useTheme();
 
   const classes = useMemo(

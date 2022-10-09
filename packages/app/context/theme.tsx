@@ -1,4 +1,5 @@
-import { createContext, FunctionComponent, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
+import type { FunctionComponentWithChildren } from '../types';
 
 type ThemeContextData = { dark: boolean; colorful: boolean };
 
@@ -17,7 +18,7 @@ const ThemeContext = createContext<ThemeContextValue>([
   null
 ]);
 
-export const ThemeProvider: FunctionComponent = ({ children }) => {
+export const ThemeProvider: FunctionComponentWithChildren = ({ children }) => {
   const [theme, changeTheme] = useState<ThemeContextData>(
     defaultThemeStateValue
   );

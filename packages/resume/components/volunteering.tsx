@@ -21,14 +21,7 @@ const ResumeVolunteering: FunctionComponent<ResumeVolunteeringProps> = ({
             </div>
             {description && <small>{description}</small>}
           </header>
-          <h4>{role}</h4>
-          {highlights && (
-            <ul>
-              {highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
-          )}
+          <p>{role}</p>
         </article>
       )
     )}

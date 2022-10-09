@@ -12,14 +12,14 @@ const ResumeAbout: FunctionComponent<ResumeAboutProps> = ({
     <h1>
       {name.first} {name.last}
     </h1>
-    <div>
+    <ul>
       {highlights.map(({ name, value, href }) => (
-        <span key={name}>
+        <li key={name}>
           <strong>{name}</strong>{' '}
           {(href && <a href={href}>{value}</a>) || value}
-        </span>
+        </li>
       ))}
-    </div>
+    </ul>
   </header>
 );
 

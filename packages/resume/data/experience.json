@@ -1,11 +1,22 @@
 [
   {
+    "company": "Revolut",
+    "position": "Senior Front-end Developer",
+    "dateStart": { "month": "July", "year": 2022 },
+    "highlights": [
+      "Worked within a cross-functional team to develop Revolut Business Payments, using TypeScript, React and styled-components, following domain-driven design (DDD) principles.",
+      "Built automated functional tests for both new and existing features. Handled CI/CD with TeamCity, managed deployments to Google Cloud Platform (GCP) and error monitoring through Sentry."
+    ]
+  },
+  {
     "company": "Mercedes-Benz.io",
     "position": "Senior Front-end Developer",
     "dateStart": { "month": "September", "year": 2020 },
+    "dateEnd": { "month": "June", "year": 2022 },
     "highlights": [
-      "Lead the development of a vehicle recommendation application with client-side machine learning using TypeScript, React, Next.js, Brain.js, Three.js, Node.js, GraphQL, TailwindCSS and AWS.",
-      "Lead the development of a vehicle financing customer-facing application, using TypeScript, Vue.js, Jest unit testing, adopting a micro front-end architecture, following SCRUM principles."
+      "Led the development of a vehicle recommendation application with client-side machine learning using TypeScript, React, Next.js, TensorFlow.js, Three.js, Node.js, GraphQL, TailwindCSS and AWS.",
+      "Worked within a cross-functional team to develop a vehicle financing customer-facing web application, using TypeScript, Vue.js, unit testing with Jest, adopting a micro front-end architecture and following the Scrum methodology.",
+      "Optimized hiring processes and organized training sessions for company team members."
     ]
   },
   {
@@ -13,8 +24,9 @@
     "position": "Lead Instructor",
     "description": "Global Technology Education Institution",
     "dateStart": { "month": "July", "year": 2019 },
+    "dateEnd": { "month": "June", "year": 2022 },
     "highlights": [
-      "Instructed the web development bootcamp in the in-person full-time and remote part-time formats. Taught 160+ students over 3.300 hours, managed a total of 18 teacher assistants.",
+      "Instructed the web development bootcamp in the in-person full-time and remote part-time formats. Taught 200+ students for over 3.300 hours, managed a total of 18 teacher assistants.",
       "Focused on modern JavaScript, React, Node.js, MongoDB, semantic HTML5, CSS3, SCSS, CI/CD with GitHub, Heroku and Netlify. Collaborated globally to develop the curriculum."
     ]
   },
@@ -35,8 +47,8 @@
     "dateStart": { "month": "August", "year": 2017 },
     "dateEnd": { "month": "September", "year": 2018 },
     "highlights": [
-      "Front-end Developer at Sapo, the largest media portal in Portugal. Introduced technologies such as React, React Native, Vue.js, Svelte, Parcel and serverless computing.",
-      "Full-stack Developer at EDP, Portugal's main energy provider. Developed \"EDPOnline\", the country's largest costumer self-care portal with over half a million users, enabling management of energy consumption, billing and contracting. Worked with JavaScript, Angular.js and Angular 2."
+      "Front-end developer at Sapo, the largest media portal in Portugal. Introduced technologies such as React, React Native, Vue.js, Svelte, Parcel and serverless computing.",
+      "Full-stack developer at EDP, Portugal's main energy provider. Developed \"EDPOnline\", the country's largest customer self-care portal with over half a million users, enabling management of energy consumption, billing and contracting. Worked with JavaScript, Angular.js and Angular 2."
     ]
   },
   {

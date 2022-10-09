@@ -40,12 +40,12 @@ const HomePage = () => {
           Hello World! My name is José, but you can call me Zé.
           <br />
           I&apos;m a full-stack developer based in Lisbon, Portugal.
-          <br />I work at{' '}
+          {/* <br />I work at{' '}
           <ExternalLink to="https://mercedes-benz.io/">
             Mercedes-Benz.io
           </ExternalLink>{' '}
           and teach at{' '}
-          <ExternalLink to="https://ironhack.com/">Ironhack</ExternalLink>.
+          <ExternalLink to="https://ironhack.com/">Ironhack</ExternalLink>. */}
           <br />
           I enjoy building fun experiments using TypeScript, React, Vue.js,
           Three.js, CSS and Node.js.
